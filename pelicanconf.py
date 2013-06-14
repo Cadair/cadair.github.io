@@ -6,6 +6,8 @@ AUTHOR = u'Stuart Mumford'
 SITENAME = u'stuartmumford.co.uk'
 SITEURL = ''
 
+THEME = 'fresh-theme'
+
 TIMEZONE = 'Europe/Paris'
 
 DEFAULT_LANG = u'en'
