@@ -320,8 +320,8 @@ DEPLOY_COMMANDS = ['cp -R output testing && ncftpput -DD -R -v ftp.servage.net /
                              # the main (the newest) index page (index.html)
 
 # Name of the theme to use.
+#THEME = "cadair"
 THEME = "stuart"
-#THEME = "bootstrap3"
 
 # Color scheme to be used for code blocks. If your theme provides
 # "assets/css/code.css" this is ignored.
@@ -593,15 +593,6 @@ EXTRA_HEAD_DATA = ""
 # Google analytics or whatever else you use. Added to the bottom of <body>
 # in the default template (base.tmpl).
 BODY_END = """
-<!-- Add Jumbotron scroll js -->
-<script type='text/javascript'>//<![CDATA[ 
-$(window).load(function(){
-$(window).scroll(function() {
-  var scrolledY = $(window).scrollTop();
-    $('.jumbotron').css('background-position', 'left ' + ((scrolledY)) + 'px');
-    });
-    });//]]>  
-</script>
 <!-- MathJax -->
 <script type="text/javascript"
     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
