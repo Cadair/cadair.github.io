@@ -1,3 +1,6 @@
+output/
+cache/
+
 *.py[cod]
 
 # C extensions
