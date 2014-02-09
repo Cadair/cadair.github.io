@@ -88,7 +88,8 @@ NAVIGATION_LINKS = {
         ((('/research.html', 'Research'),
           ('/research.html#publications','Publications'),
           ('/research.html#simulations','Simulations'),
-          ('/research.html#asteroseismology', 'Asteroseismology')), 'Research'),
+          ('/asteroseismology.html', 'Asteroseismology')), 'Research'),
+        ('/coding.html', 'Programming')
     ),
 }
 
@@ -237,7 +238,7 @@ INDEX_PATH = "blog"
 # And then do a backup, or run `nikola ping` from the `ping`
 # plugin (`nikola install_plugin ping`).
 # To do manual deployment, set it to []
-DEPLOY_COMMANDS = ['cp -R output testing && ncftpput -DD -R -v ftp.servage.net /stuartmumford.co.uk/ ./testing && rmdir testing']
+DEPLOY_COMMANDS = ['cp -R output testing && ncftpput -u stumum01 -DD -R -v ftp.servage.net / ./testing && rmdir testing']
 
 # Where the output site should be located
 # If you don't use an absolute path, it will be considered as relative
@@ -499,7 +500,7 @@ SOCIAL_BUTTONS_CODE = ""
 # """
 
 # Hide link to source for the posts?
-# HIDE_SOURCELINK = False
+HIDE_SOURCELINK = True
 # Copy the source files for your pages?
 # Setting it to False implies HIDE_SOURCELINK = True
 # COPY_SOURCES = True
@@ -703,4 +704,11 @@ LOGGING_HANDLERS = {
 # Put in global_context things you want available on all your templates.
 # It can be anything, data, functions, modules, etc.
 
-GLOBAL_CONTEXT = {}
+GLOBAL_CONTEXT = {'cadair_social_links': 
+"""
+<a href="https://github.com/Cadair" target="_blank"><img src="/assets/img/github_logo.png" alt="GitHub" height="50px"></a>
+<a href="https://plus.google.com/+StuartMumford/" target="_blank"><img src="/assets/img/google-plus.png" alt="Google Plus" height="50px"></a>
+<a href="https://twitter.com/stuartmumford" target="_blank"><img src="/assets/img/Twitter_logo_white.png" alt="Twitter" height="50px"></a>
+<a href="https://www.linkedin.com/in/stuartmumford" target="_blank"><img src="/assets/img/linkedin_logo.png" alt="LinkedIn" height="50px"></a>
+"""
+}
