@@ -82,14 +82,14 @@ TRANSLATIONS_PATTERN = "{path}.{ext}.{lang}"
 # You should provide a key-value pair for each used language.
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ((('/blog/', 'Blog'),
-          ('/archive.html', 'Archives'),
-          ('/categories/index.html', 'Tags')), "Blog"),
         ((('/research.html', 'Research'),
           ('/research.html#publications','Publications'),
           ('/research.html#simulations','Simulations'),
           ('/asteroseismology.html', 'Asteroseismology')), 'Research'),
-        ('/coding.html', 'Programming')
+        ('/coding.html', 'Programming'),
+        ((('/blog/', 'Blog'),
+          ('/archive.html', 'Archives'),
+          ('/categories/index.html', 'Tags')), "Blog"),
     ),
 }
 
@@ -238,7 +238,7 @@ INDEX_PATH = "blog"
 # And then do a backup, or run `nikola ping` from the `ping`
 # plugin (`nikola install_plugin ping`).
 # To do manual deployment, set it to []
-DEPLOY_COMMANDS = ['cp -R output testing && ncftpput -u stumum01 -DD -R -v ftp.servage.net / ./testing && rmdir testing']
+DEPLOY_COMMANDS = ['cp -R output testing && ncftpput -u stumum01 -DD -R -v ftp.servage.net / ./testing && rm -r testing']
 
 # Where the output site should be located
 # If you don't use an absolute path, it will be considered as relative
@@ -457,20 +457,20 @@ COMMENT_SYSTEM_ID = ""
 # MATHJAX_CONFIG = ""
 
 # If you are using the compile-ipynb plugin, just add this one:
-#MATHJAX_CONFIG = """
-#<script type="text/x-mathjax-config">
-#MathJax.Hub.Config({
-#    tex2jax: {
-#        inlineMath: [ ['$','$'], ["\\\(","\\\)"] ],
-#        displayMath: [ ['$$','$$'], ["\\\[","\\\]"] ]
-#    },
-#    displayAlign: 'left', // Change this to 'center' to center equations.
-#    "HTML-CSS": {
-#        styles: {'.MathJax_Display': {"margin": 0}}
-#    }
-#});
-#</script>
-#"""
+MATHJAX_CONFIG = """
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\\(","\\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\\[","\\\]"] ]
+    },
+    displayAlign: 'left', // Change this to 'center' to center equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script>
+"""
 
 # Do you want to customize the nbconversion of your IPython notebook?
 # IPYNB_CONFIG = {}
