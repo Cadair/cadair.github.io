@@ -43,6 +43,9 @@ Fedun, V., Erdélyi, R. - re-submitted April 2014
 ##Conferences
 <a id="#conferences"></a>
 
+This is a list off all the conferences I have attended and links to the material
+ I presented, where applicable:
+
 * UKMHD 2012
 * [UKMHD 2013](http://stuartmumford.co.uk/talks/ukmhd2013-talk.pdf)
 * [HPC @ Sheffield 2013](http://stuartmumford.co.uk/talks/hpc2013-talk.pdf)
