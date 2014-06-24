@@ -40,8 +40,8 @@ target="blank_"><b>Generation of Magnetohydrodynamic Waves in Low Solar
  Atmospheric Flux Tubes by Photospheric Motions</b></a> - Mumford, S. J.,
 Fedun, V., Erdélyi, R. - re-submitted April 2014
 
-##Conferences
-<a id="#conferences"></a>
+##Conferences &amp; Talks
+<a id="#talks"></a>
 
 This is a list off all the conferences I have attended and links to the material
  I presented, where applicable:

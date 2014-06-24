@@ -84,6 +84,7 @@ NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         ((('/research.html', 'Research'),
           ('/research.html#publications','Publications'),
+          ('/research.html#talks', 'Talks'),
           ('/research.html#simulations','Simulations'),
           ('/asteroseismology.html', 'Asteroseismology')), 'Research'),
         ('/coding.html', 'Programming'),
