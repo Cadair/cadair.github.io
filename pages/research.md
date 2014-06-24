@@ -51,8 +51,11 @@ This is a list off all the conferences I have attended and links to the material
 * [HPC @ Sheffield 2013](http://stuartmumford.co.uk/talks/hpc2013-talk.pdf)
 * [SciPy 2013](https://www.youtube.com/watch?v=bXPPTCkaVu8)
   [(Proceedings)](http://conference.scipy.org/proceedings/scipy2013/mumford.html)
+* [Harvard-Simthsonian Center for Astrophysics 2013](http://stuartmumford.co.uk/talks/cfa)
+  Talk given to the Python user group at CfA.
 * [HPC @ Sheffield 2014](http://stuartmumford.co.uk/talks/hpc2014-poster.pdf)
 * [UKMHD 2014](http://stuartmumford.co.uk/talks/ukmhd2014)
+* [NAM 2014](http://stuartmumford.co.uk/talks/nam2014)
 
 ## Simulations
 <a id='simulations'></a>

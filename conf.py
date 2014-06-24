@@ -7,13 +7,13 @@ import time
 
 # Data about this site
 BLOG_AUTHOR = "Stuart Mumford"
-BLOG_TITLE = "StuartMumford.co.uk"
+BLOG_TITLE = "Stuart Mumford"
 # This is the main URL for your site. It will be used
 # in a prominent link
-SITE_URL = "http://www.stuartmumford.co.uk/testing/"
+SITE_URL = "http://www.stuartmumford.co.uk/"
 # This is the URL where nikola's output will be deployed.
 # If not set, defaults to SITE_URL
-BASE_URL = "http://www.stuartmumford.co.uk/testing/"
+BASE_URL = "http://www.stuartmumford.co.uk/"
 BLOG_EMAIL = "site@cadair.com"
 BLOG_DESCRIPTION = "Homepage for Stuart Mumford."
 
@@ -238,7 +238,7 @@ INDEX_PATH = "blog"
 # And then do a backup, or run `nikola ping` from the `ping`
 # plugin (`nikola install_plugin ping`).
 # To do manual deployment, set it to []
-DEPLOY_COMMANDS = ['cp -R output testing && ncftpput -u stumum01 -DD -R -v ftp.servage.net / ./testing && rm -r testing']
+DEPLOY_COMMANDS = ['cd output && ncftpput -u stumum01 -DD -R -v ftp.servage.net / ./']
 
 # Where the output site should be located
 # If you don't use an absolute path, it will be considered as relative
@@ -704,7 +704,7 @@ LOGGING_HANDLERS = {
 # Put in global_context things you want available on all your templates.
 # It can be anything, data, functions, modules, etc.
 
-GLOBAL_CONTEXT = {'cadair_social_links': 
+GLOBAL_CONTEXT = {'cadair_social_links':
 """
 <a href="https://github.com/Cadair" target="_blank"><img src="/assets/img/github_logo.png" alt="GitHub" height="50px"></a>
 <a href="https://plus.google.com/+StuartMumford/" target="_blank"><img src="/assets/img/google-plus.png" alt="Google Plus" height="50px"></a>
