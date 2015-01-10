@@ -17,10 +17,19 @@ chromosphere. I developed a algorithm to identify and track these brightenings
 over time which allowed for the detailed statistical analysis of these events
 to be performed.
 
+<a id='publications'></a>
+</br>
 ## Publications
-<a id='#publications'></a>
 
 ### Published
+* <a href="http://iopscience.iop.org/0004-637X/791/1/61/"
+target="_blank"><b>The Detection of Upwardly Propagating Waves Channeling
+Energy from the Chromosphere to the Low Corona</b></a> - Freij N., 
+Scullion E. M., Nelson C. J., Mumford S. J., Wedemeyer S., and Erdélyi R.
+- *The Astrophysical Journal* Volume 791, Issue 1, p.61 - April 2014. 
+<a href="http://iopscience.iop.org/0004-637X/791/1/61/" target="_blank">
+(Paywall) </a>
+
 * <a href="http://labs.adsabs.harvard.edu/ui/abs/2013MNRAS.435..689G"
 target="_blank"><b>Magnetohydrostatic equilibrium - I. Three-dimensional open
 magnetic flux tube in the stratified solar atmosphere</b></a> - Gent, F. A.,
@@ -31,17 +40,24 @@ Astronomical Society* Volume 435, Issue 1, p.689-697 - Oct 2013
 target="_blank"><b>Statistical Analysis of Small Ellerman Bomb Events</b></a> -
 Nelson, C. J., Doyle, J. G., Erdélyi, R., Huang, Z., Madjarska, M.
 S., Mathioudakis, M., Mumford, S. J., Reardon, K - *Solar Physics*, Volume 283,
-Issue 2, pp.307-323 - Apr 2013.
-
-### Submitted
+Issue 2, p.307-323 - Apr 2013.
 
 * <a href="http://labs.adsabs.harvard.edu/adsabs/abs/2013arXiv1305.7415M/"
 target="blank_"><b>Generation of Magnetohydrodynamic Waves in Low Solar
  Atmospheric Flux Tubes by Photospheric Motions</b></a> - Mumford, S. J.,
-Fedun, V., Erdélyi, R. - re-submitted April 2014
+Fedun, V., Erdélyi, R. - *The Astrophysical Journal*, Volume 799, Issue
+1 - Jan 2015.
 
+### Submitted
+
+* <a href="http://labs.adsabs.harvard.edu/adsabs/abs/2015arXiv150101871M/" 
+  target="blank_"><b>Photospheric Logarithmic Velocity Spirals as
+  MHD Wave Generation Mechanisms</b></a> - Mumford, S. J. and  Erdélyi, R. 
+  - Submitted Jan 2015.
+
+<a id="talks"></a>
+</br>
 ##Conferences &amp; Talks
-<a id="#talks"></a>
 
 This is a list off all the conferences I have attended and links to the material
  I presented, where applicable:
@@ -57,8 +73,8 @@ This is a list off all the conferences I have attended and links to the material
 * [UKMHD 2014](http://stuartmumford.co.uk/talks/ukmhd2014)
 * [NAM 2014](http://stuartmumford.co.uk/talks/nam2014)
 
+<a style="margin-bottom: 10px;" id='simulations'></a>
 ## Simulations
-<a id='simulations'></a>
 My primary research interest is the simulation and analysis of wave propagation
 in magnetic structures in the low solar atmosphere. This involves the use of
 the &ldquo;Sheffield Advanced Code&rdquo; a versatile code base able to simulate
