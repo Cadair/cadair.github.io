@@ -88,9 +88,9 @@ NAVIGATION_LINKS = {
           ('/research.html#simulations','Simulations'),
           ('/asteroseismology.html', 'Asteroseismology')), 'Research'),
         ('/coding.html', 'Programming'),
-        ((('/blog/', 'Blog'),
-          ('/archive.html', 'Archives'),
-          ('/categories/index.html', 'Tags')), "Blog"),
+#        ((('/blog/', 'Blog'),
+#          ('/archive.html', 'Archives'),
+#          ('/categories/index.html', 'Tags')), "Blog"),
     ),
 }
 
@@ -239,7 +239,8 @@ INDEX_PATH = "blog"
 # And then do a backup, or run `nikola ping` from the `ping`
 # plugin (`nikola install_plugin ping`).
 # To do manual deployment, set it to []
-DEPLOY_COMMANDS = {'default': 'cd output && ncftpput -u stumum01 -DD -R -v ftp.servage.net / ./'}
+DEPLOY_COMMANDS = {'default': ['cd output && ncftpput -u stumum01 -DD -R -v ftp.servage.net / ./']}
+#DEPLOY_COMMANDS = ['cd output && ncftpput -u stumum01 -DD -R -v ftp.servage.net / ./']
 
 # Where the output site should be located
 # If you don't use an absolute path, it will be considered as relative
@@ -501,7 +502,7 @@ SOCIAL_BUTTONS_CODE = ""
 # """
 
 # Hide link to source for the posts?
-HIDE_SOURCELINK = True
+SHOW_SOURCELINK = False
 # Copy the source files for your pages?
 # Setting it to False implies HIDE_SOURCELINK = True
 # COPY_SOURCES = True

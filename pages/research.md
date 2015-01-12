@@ -17,16 +17,28 @@ chromosphere. I developed a algorithm to identify and track these brightenings
 over time which allowed for the detailed statistical analysis of these events
 to be performed.
 
-<a id='publications'></a>
-</br>
 ## Publications
+<a id='publications'></a>
 
 ### Published
-* <a href="http://iopscience.iop.org/0004-637X/791/1/61/"
+
+#### First Author
+
+* <a href="http://labs.adsabs.harvard.edu/adsabs/abs/2013arXiv1305.7415M/"
+target="blank_"><b>Generation of Magnetohydrodynamic Waves in Low Solar
+ Atmospheric Flux Tubes by Photospheric Motions</b></a> - Mumford, S. J.,
+Fedun, V., Erdélyi, R. - *The Astrophysical Journal*, Volume 799, Issue
+1 - Jan 2015.
+<a href="http://iopscience.iop.org/0004-637X/799/1/6/" target="_blank">
+(Paywall) </a>
+
+#### Contributor
+
+* <a href="http://labs.adsabs.harvard.edu/adsabs/abs/2014ApJ...791...61F/"
 target="_blank"><b>The Detection of Upwardly Propagating Waves Channeling
-Energy from the Chromosphere to the Low Corona</b></a> - Freij N., 
-Scullion E. M., Nelson C. J., Mumford S. J., Wedemeyer S., and Erdélyi R.
-- *The Astrophysical Journal* Volume 791, Issue 1, p.61 - April 2014. 
+Energy from the Chromosphere to the Low Corona</b></a> - Freij N.,
+Scullion E. M., Nelson C. J., Mumford S. J., Wedemeyer S., and Erdélyi R.-
+*The Astrophysical Journal* Volume 791, Issue 1, p.61 - April 2014.
 <a href="http://iopscience.iop.org/0004-637X/791/1/61/" target="_blank">
 (Paywall) </a>
 
@@ -42,18 +54,13 @@ Nelson, C. J., Doyle, J. G., Erdélyi, R., Huang, Z., Madjarska, M.
 S., Mathioudakis, M., Mumford, S. J., Reardon, K - *Solar Physics*, Volume 283,
 Issue 2, p.307-323 - Apr 2013.
 
-* <a href="http://labs.adsabs.harvard.edu/adsabs/abs/2013arXiv1305.7415M/"
-target="blank_"><b>Generation of Magnetohydrodynamic Waves in Low Solar
- Atmospheric Flux Tubes by Photospheric Motions</b></a> - Mumford, S. J.,
-Fedun, V., Erdélyi, R. - *The Astrophysical Journal*, Volume 799, Issue
-1 - Jan 2015.
 
 ### Submitted
 
-* <a href="http://labs.adsabs.harvard.edu/adsabs/abs/2015arXiv150101871M/" 
+* <a href="http://labs.adsabs.harvard.edu/adsabs/abs/2015arXiv150101871M/"
   target="blank_"><b>Photospheric Logarithmic Velocity Spirals as
-  MHD Wave Generation Mechanisms</b></a> - Mumford, S. J. and  Erdélyi, R. 
-  - Submitted Jan 2015.
+  MHD Wave Generation Mechanisms</b></a> - Mumford, S. J. and  Erdélyi, R. -
+  Submitted Jan 2015.
 
 <a id="talks"></a>
 </br>
@@ -72,6 +79,8 @@ This is a list off all the conferences I have attended and links to the material
 * [HPC @ Sheffield 2014](http://stuartmumford.co.uk/talks/hpc2014-poster.pdf)
 * [UKMHD 2014](http://stuartmumford.co.uk/talks/ukmhd2014)
 * [NAM 2014](http://stuartmumford.co.uk/talks/nam2014)
+* [EuroSciPy 2014](http://stuartmumford.co.uk/talks/euroscipy2014) -
+[Video (No Audio)](https://www.youtube.com/watch?v=-Lfz3kBjEyY)
 
 <a style="margin-bottom: 10px;" id='simulations'></a>
 ## Simulations
