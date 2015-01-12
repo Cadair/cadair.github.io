@@ -9,13 +9,23 @@
 -->
 
 My research interests are varied, however mostly focused around computing and
-data processing. During my PhD I have focused on high-performance simulations
-of the low solar atmosphere studying wave phenomena in magnetic structures.
+data processing. During my PhD I have focused on using high-performance computing 
+to simulate the low solar atmosphere studying wave phenomena in magnetic structures.
 As well as this I have contributed to work on the automated detection and
 tracking of 'Ellerman Bombs' which are small brightening is the solar
 chromosphere. I developed a algorithm to identify and track these brightenings
 over time which allowed for the detailed statistical analysis of these events
 to be performed.
+I have also been involved in the processing and analysis of data
+from the Swedish Solar Telescope, in which evidence of upwardly
+propagating waves from a magnetic pore was discovered.
+
+The primary component of the PhD research has been the development
+of an analysis pipeline for the identification and quantification of
+wave modes in my numerical simulations of the solar atmosphere. This software 
+and other supporting tools, have been made availible on GitHub under the
+[pysac](https://github.com/SWAT-Sheffield/pysac) project.
+
 
 ## Publications
 <a id='publications'></a>
@@ -60,11 +70,11 @@ Issue 2, p.307-323 - Apr 2013.
 * <a href="http://labs.adsabs.harvard.edu/adsabs/abs/2015arXiv150101871M/"
   target="blank_"><b>Photospheric Logarithmic Velocity Spirals as
   MHD Wave Generation Mechanisms</b></a> - Mumford, S. J. and  Erdélyi, R. -
-  Submitted Jan 2015.
+  Submitted Jan 2015 - Fully reproduceable repository [here](https://bitbucket.org/smumford/expansion-factor-paper).
 
 <a id="talks"></a>
 </br>
-##Conferences &amp; Talks
+## Conferences &amp; Talks
 
 This is a list off all the conferences I have attended and links to the material
  I presented, where applicable:
@@ -83,7 +93,7 @@ This is a list off all the conferences I have attended and links to the material
 [Video (No Audio)](https://www.youtube.com/watch?v=-Lfz3kBjEyY)
 
 <a style="margin-bottom: 10px;" id='simulations'></a>
-## Simulations
+## Simulations of the Solar Atmosphere
 My primary research interest is the simulation and analysis of wave propagation
 in magnetic structures in the low solar atmosphere. This involves the use of
 the &ldquo;Sheffield Advanced Code&rdquo; a versatile code base able to simulate

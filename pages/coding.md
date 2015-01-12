@@ -9,9 +9,10 @@
 -->
 
 Over the last few years I have been active in contributing to a few open
-source projects, primarily written in Python. I am the lead developer and
-executive director of the 'SunPy' project which is a core library for solar
-physics data analysis.
+source projects, primarily written in Python. I served as Lead
+Developer and Executive Director of the SunPy project for 7 months
+up until September 2014. I am still a member of the SunPy board and
+an active core developer.
 
 ##SunPy
 

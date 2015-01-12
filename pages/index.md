@@ -20,7 +20,7 @@ waves could help explain why the upper layers of the solar atmosphere are
 hotter than expected.
 
 I am also heavily involved in the [SunPy](http://sunpy.org) project,
-and am currently lead developer. SunPy aims to provide a free and open source
+having previously been lead developer. SunPy aims to provide a free and open source
 package for the analysis of solar data using the scientific Python ecosystem.
 To see more about SunPy visit it's webpage [www.sunpy.org](http://www.sunpy.org),
 and to see more of my contributions to open source software see
