@@ -88,9 +88,9 @@ NAVIGATION_LINKS = {
           ('/research.html#simulations','Simulations'),
           ('/asteroseismology.html', 'Asteroseismology')), 'Research'),
         ('/coding.html', 'Programming'),
-#        ((('/blog/', 'Blog'),
-#          ('/archive.html', 'Archives'),
-#          ('/categories/index.html', 'Tags')), "Blog"),
+        ((('/blog/', 'Blog'),
+          ('/archive.html', 'Archives'),
+          ('/categories/index.html', 'Tags')), "Blog"),
     ),
 }
 
@@ -714,3 +714,5 @@ GLOBAL_CONTEXT = {'cadair_social_links':
 <a href="https://www.linkedin.com/in/stuartmumford" target="_blank"><img src="/assets/img/linkedin_logo.png" alt="LinkedIn" height="50px"></a>
 """
 }
+
+WRITE_TAG_CLOUD = False
