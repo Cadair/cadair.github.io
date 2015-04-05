@@ -30,47 +30,186 @@ and other supporting tools, have been made availible on GitHub under the
 ## Publications
 <a id='publications'></a>
 
-### Published
 
-#### First Author
+<div class="paperblock">
+<a href="http://labs.adsabs.harvard.edu/adsabs/abs/2015arXiv150101871M/"
+target="blank_" class="papertitle">Photospheric Logarithmic Velocity Spirals as
+MHD Wave Generation Mechanisms</a>
+Mumford, S. J. and  Erdélyi, R. <br/>
+<i>Monthly Noticies of the Royal Astronomical Society</i> - March 2015 - Volume 449 Issue 2.<br/>
+<a href ="http://mnras.oxfordjournals.org/content/449/2/1679">Publisher Link (Open Access)</a> | <a href="https://bitbucket.org/smumford/expansion-factor-paper">Reproduceable repository</a> <br/>
+<a href="javascript:toggle('mum2015a_abs', 'mum2015a_link');" id="mum2015a_link">[show abstract]</a>
+<div id="mum2015a_abs" style="display: none;">
+High-resolution observations of the solar photosphere have
+identified a wide variety of spiralling motions in the solar plasma.
+These spirals vary in properties, but are observed to be abundant at
+the solar surface. In this work, these spirals are studied for their
+potential as magnetohydrodynamic (MHD) wave generation mechanisms.
+The inter-granular lanes, where these spirals are commonly observed,
+are also regions where the magnetic field strength is higher than
+average. This combination of magnetic field and spiralling plasma is
+a recipe for the generation of Alfvén waves and other MHD waves.
+This work employs numerical simulations of a self-similar magnetic
+flux tube embedded in a realistic, gravitationally stratified, solar
+atmosphere to study the effects of a single magnetic flux tube
+perturbed by a logarithmic velocity spiral driver. The expansion
+factor of the logarithmic spiral driver is varied and multiple
+simulations are run for a range of values of the expansion factor
+centred around observational constraints. The simulations are
+analysed using ‘flux surfaces’ constructed from the magnetic field
+lines so that the vectors perpendicular, parallel and azimuthal to
+the local magnetic field vector can be calculated. The results of
+this analysis show that the Alfvén wave is the dominant wave for
+lower values of the expansion factor, whereas for the higher values
+the parallel component is dominant. This transition occurs within
+the range of the observational constraints, meaning that spiral
+drivers, as observed in the solar photosphere, have the potential to
+generate a variety of MHD wave modes. 
+</div>
+</div>
 
-* <a href="http://labs.adsabs.harvard.edu/adsabs/abs/2013arXiv1305.7415M/"
-target="blank_"><b>Generation of Magnetohydrodynamic Waves in Low Solar
- Atmospheric Flux Tubes by Photospheric Motions</b></a> - Mumford, S. J.,
-Fedun, V., Erdélyi, R. - *The Astrophysical Journal*, Volume 799, Issue
-1 - Jan 2015.
-<a href="http://iopscience.iop.org/0004-637X/799/1/6/" target="_blank">
-(Paywall) </a>
+<div class="paperblock">
+<a href="http://labs.adsabs.harvard.edu/adsabs/abs/2013arXiv1305.7415M/"
+target="blank_" class="papertitle">Generation of Magnetohydrodynamic Waves in Low Solar
+ Atmospheric Flux Tubes by Photospheric Motions</a>
+Mumford, S. J., Fedun, V., Erdélyi, R. <br/>
+<i>The Astrophysical Journal</i> -  January 2015 - Volume 799, Issue 1. <br/>
+<a href="http://iopscience.iop.org/0004-637X/799/1/6/" target="_blank">Publisher Link (Paywall)</a> <br/>
+<a href="javascript:toggle('mum2015_abs', 'mum2015_link');" id="mum2015_link">[show abstract]</a>
+<div id="mum2015_abs" style="display: none;">
+Recent ground- and space-based observations reveal the presence of
+small-scale motions between convection cells in the solar
+photosphere. In these regions, small-scale magnetic flux tubes are
+generated via the interaction of granulation motion and the
+background magnetic field. This paper studies the effects of these
+motions on magnetohydrodynamic (MHD) wave excitation from broadband
+photospheric drivers. Numerical experiments of linear MHD wave
+propagation in a magnetic flux tube embedded in a realistic
+gravitationally stratified solar atmosphere between the photosphere
+and the low choromosphere (above $\beta = 1$) are performed. Horizontal
+and vertical velocity field drivers mimic granular buffeting and
+solar global oscillations. A uniform torsional driver as well as
+Archimedean and logarithmic spiral drivers mimic observed torsional
+motions in the solar photosphere. The results are analyzed using a
+novel method for extracting the parallel, perpendicular, and
+azimuthal components of the perturbations, which caters to both the
+linear and non-linear cases. Employing this method yields the
+identification of the wave modes excited in the numerical
+simulations and enables a comparison of excited modes via velocity
+perturbations and wave energy flux. The wave energy flux
+distribution is calculated to enable the quantification of the
+relative strengths of excited modes. The torsional drivers primarily
+excite Alfvén modes (≈60% of the total flux) with small
+contributions from the slow kink mode, and, for the logarithmic
+spiral driver, small amounts of slow sausage mode. The horizontal
+and vertical drivers primarily excite slow kink or fast sausage
+modes, respectively, with small variations dependent upon flux
+surface radius. 
+</div>
+</div>
 
-#### Contributor
 
-* <a href="http://labs.adsabs.harvard.edu/adsabs/abs/2014ApJ...791...61F/"
-target="_blank"><b>The Detection of Upwardly Propagating Waves Channeling
-Energy from the Chromosphere to the Low Corona</b></a> - Freij N.,
-Scullion E. M., Nelson C. J., Mumford S. J., Wedemeyer S., and Erdélyi R.-
-*The Astrophysical Journal* Volume 791, Issue 1, p.61 - April 2014.
-<a href="http://iopscience.iop.org/0004-637X/791/1/61/" target="_blank">
-(Paywall) </a>
+<div class="paperblock">
+<a href="http://labs.adsabs.harvard.edu/adsabs/abs/2014ApJ...791...61F/"
+target="_blank" class="papertitle">The Detection of Upwardly Propagating Waves Channeling
+Energy from the Chromosphere to the Low Corona</a>
+Freij N., Scullion E. M., Nelson C. J., Mumford S. J., Wedemeyer S., and Erdélyi R. <br />
+<i>The Astrophysical Journal</i> - July 2014 - Volume 791, Issue 1, p.61 <br />
+<a href="http://iopscience.iop.org/0004-637X/791/1/61/" target="_blank"> Publisher Link (Paywall) </a> <br />
+<a href="javascript:toggle('freij2014_abs', 'freij2014_link');" id="freij2014_link">[show abstract]</a>
+<div id="freij2014_abs" style="display: none;">
+There have been ubiquitous observations of wave-like motions in the
+solar atmosphere for decades. Recent improvements to space- and
+ground-based observatories have allowed the focus to shift to
+smaller magnetic structures on the solar surface. In this paper,
+high-resolution ground-based data taken using the Swedish 1 m Solar
+Telescope is combined with co-spatial and co-temporal data from the
+Atmospheric Imaging Assembly (AIA) on board the Solar Dynamics
+Observatory (SDO) satellite to analyze running penumbral waves
+(RPWs). RPWs have always been thought to be radial wave propagation
+that occurs within sunspots. Recent research has suggested that they
+are in fact upwardly propagating field-aligned waves (UPWs). Here,
+RPWs within a solar pore are observed for the first time and are
+interpreted as UPWs due to the lack of a penumbra that is required
+to support RPWs. These UPWs are also observed co-spatially and
+co-temporally within several SDO/AIA elemental lines that sample the
+transition region and low corona. The observed UPWs are traveling at
+a horizontal velocity of around 17 ± 0.5 km s-1 and a minimum
+vertical velocity of 42 ± 21 km s-1. The estimated energy of the
+waves is around 150 W m-2, which is on the lower bound required to
+heat the quiet-Sun corona. This is a new, yet unconsidered source of
+wave energy within the solar chromosphere and low corona. 
+</div>
+</div>
 
-* <a href="http://labs.adsabs.harvard.edu/ui/abs/2013MNRAS.435..689G"
-target="_blank"><b>Magnetohydrostatic equilibrium - I. Three-dimensional open
-magnetic flux tube in the stratified solar atmosphere</b></a> - Gent, F. A.,
-Fedun, V., Mumford, S. J., Erdélyi, R. - *Monthly Notices of the Royal
-Astronomical Society* Volume 435, Issue 1, p.689-697 - Oct 2013
 
-* <a href="http://labs.adsabs.harvard.edu/ui/abs/2013SoPh..283..307N"
-target="_blank"><b>Statistical Analysis of Small Ellerman Bomb Events</b></a> -
-Nelson, C. J., Doyle, J. G., Erdélyi, R., Huang, Z., Madjarska, M.
-S., Mathioudakis, M., Mumford, S. J., Reardon, K - *Solar Physics*, Volume 283,
-Issue 2, p.307-323 - Apr 2013.
+<div class="paperblock">
+<a href="http://labs.adsabs.harvard.edu/ui/abs/2013MNRAS.435..689G"
+target="_blank" class="papertitle">Magnetohydrostatic equilibrium - I. Three-dimensional open
+magnetic flux tube in the stratified solar atmosphere</a>
+
+Gent, F. A., Fedun, V., Mumford, S. J., Erdélyi, R. <br />
+
+<i>Monthly Notices of the Royal Astronomical Society</i> - October 2013 - Volume 435, Issue 1, p.689-697 <br />
+<a href="http://mnras.oxfordjournals.org/content/435/1/689" target="_blank"> Publisher Link (Paywall) </a> <br />
+<a href="javascript:toggle('gent2013_abs', 'gent2013_link');" id="gent2013_link">[show abstract]</a>
+<div id="gent2013_abs" style="display: none;">
+A single open magnetic flux tube spanning the solar photosphere
+(solar radius ≃ R☉) and the lower corona (R☉ + 10 Mm) is modelled in
+magnetohydrostatic equilibrium within a realistic stratified
+atmosphere subject to solar gravity. Such flux tubes are observed to
+remain relatively stable for up to a day or more, and it is our aim
+to apply the model as the background condition for numerical studies
+of energy transport mechanisms from the surface to the corona. We
+solve analytically an axially symmetric 3D structure for the model,
+with magnetic field strength, plasma density, pressure and
+temperature all consistent with observational and theoretical
+estimates. The self-similar construction ensures the magnetic field
+is divergence free. The equation of pressure balance for this
+particular set of flux tubes can be integrated analytically to find
+the pressure and density corrections required to preserve the
+magnetohydrostatic equilibrium. The model includes a number of free
+parameters, which makes the solution applicable to a variety of
+other physical problems and it may therefore be of more general
+interest. 
+</div>
+</div>
 
 
-### Submitted
+ 
+<div class="paperblock">
+<a href="http://labs.adsabs.harvard.edu/ui/abs/2013SoPh..283..307N"
+target="_blank" class="papertitle">Statistical Analysis of Small Ellerman Bomb Events</a>
 
-* <a href="http://labs.adsabs.harvard.edu/adsabs/abs/2015arXiv150101871M/"
-  target="blank_"><b>Photospheric Logarithmic Velocity Spirals as
-  MHD Wave Generation Mechanisms</b></a> - Mumford, S. J. and  Erdélyi, R. -
-  Submitted Jan 2015 - Fully reproduceable repository [here](https://bitbucket.org/smumford/expansion-factor-paper).
+Nelson, C. J., Doyle, J. G., Erdélyi, R., Huang, Z., Madjarska, M. S., Mathioudakis, M., Mumford, S. J., Reardon, K <br />
+
+<i>Solar Physics</i> - April 2013 - Volume 283, Issue 2, p.307-323. <br />
+<a href="http://link.springer.com/article/10.1007%2Fs11207-012-0222-3" target="_blank"> Publisher Link (Paywall) </a> <br />
+<a href="javascript:toggle('nelson2013_abs', 'nelson2013_link');" id="nelson2013_link">[show abstract]</a>
+<div id="nelson2013_abs" style="display: none;">
+The properties of Ellerman bombs (EBs), small-scale brightenings in
+the Hα line wings, have proved difficult to establish because their
+size is close to the spatial resolution of even the most advanced
+telescopes. Here, we aim to infer the size and lifetime of EBs using
+high-resolution data of an emerging active region collected using
+the Interferometric BIdimensional Spectrometer (IBIS) and Rapid
+Oscillations of the Solar Atmosphere (ROSA) instruments as well as
+the Helioseismic and Magnetic Imager (HMI) onboard the Solar
+Dynamics Observatory (SDO). We develop an algorithm to track EBs
+through their evolution, finding that EBs can often be much smaller
+(around 0.3″) and shorter-lived (less than one minute) than previous
+estimates. A correlation between G-band magnetic bright points and
+EBs is also found. Combining SDO/HMI and G-band data gives a good
+proxy of the polarity for the vertical magnetic field. It is found
+that EBs often occur both over regions of opposite polarity flux and
+strong unipolar fields, possibly hinting at magnetic reconnection as
+a driver of these events.The energetics of EB events is found to
+follow a power-law distribution in the range of a nanoflare (1022-25
+ergs). 
+</div>
+</div>
+
+
 
 <a id="talks"></a>
 </br>

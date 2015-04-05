@@ -716,3 +716,4 @@ GLOBAL_CONTEXT = {'cadair_social_links':
 }
 
 WRITE_TAG_CLOUD = False
+DEPLOY_DRAFTS = False
