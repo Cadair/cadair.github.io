@@ -28,7 +28,7 @@ and other supporting tools, have been made availible on GitHub under the
 
 
 ## Publications
-<a id='publications'></a>
+<a class='anchor' id='publications'></a>
 
 
 <div class="paperblock">
@@ -230,6 +230,9 @@ This is a list off all the conferences I have attended and links to the material
 * [NAM 2014](http://stuartmumford.co.uk/talks/nam2014)
 * [EuroSciPy 2014](http://stuartmumford.co.uk/talks/euroscipy2014) -
 [Video (No Audio)](https://www.youtube.com/watch?v=-Lfz3kBjEyY)
+* [Python in Astronomy - Invited
+  Keynote](http://stuartmumford.co.uk/talks/pia)
+* [NAM 2015](http://stuartmumford.co.uk/talks/nam2015)
 
 <a style="margin-bottom: 10px;" id='simulations'></a>
 ## Simulations of the Solar Atmosphere
