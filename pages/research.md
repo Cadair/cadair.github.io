@@ -219,20 +219,20 @@ This is a list off all the conferences I have attended and links to the material
  I presented, where applicable:
 
 * UKMHD 2012
-* [UKMHD 2013](http://stuartmumford.co.uk/talks/ukmhd2013-talk.pdf)
-* [HPC @ Sheffield 2013](http://stuartmumford.co.uk/talks/hpc2013-talk.pdf)
+* [UKMHD 2013](http://stuartmumford.uk/talks/ukmhd2013-talk.pdf)
+* [HPC @ Sheffield 2013](http://stuartmumford.uk/talks/hpc2013-talk.pdf)
 * [SciPy 2013](https://www.youtube.com/watch?v=bXPPTCkaVu8)
   [(Proceedings)](http://conference.scipy.org/proceedings/scipy2013/mumford.html)
-* [Harvard-Simthsonian Center for Astrophysics 2013](http://stuartmumford.co.uk/talks/cfa)
+* [Harvard-Simthsonian Center for Astrophysics 2013](http://stuartmumford.uk/talks/cfa)
   Talk given to the Python user group at CfA.
-* [HPC @ Sheffield 2014](http://stuartmumford.co.uk/talks/hpc2014-poster.pdf)
-* [UKMHD 2014](http://stuartmumford.co.uk/talks/ukmhd2014)
-* [NAM 2014](http://stuartmumford.co.uk/talks/nam2014)
-* [EuroSciPy 2014](http://stuartmumford.co.uk/talks/euroscipy2014) -
+* [HPC @ Sheffield 2014](http://stuartmumford.uk/talks/hpc2014-poster.pdf)
+* [UKMHD 2014](http://stuartmumford.uk/talks/ukmhd2014)
+* [NAM 2014](http://stuartmumford.uk/talks/nam2014)
+* [EuroSciPy 2014](http://stuartmumford.uk/talks/euroscipy2014) -
 [Video (No Audio)](https://www.youtube.com/watch?v=-Lfz3kBjEyY)
 * [Python in Astronomy - Invited
-  Keynote](http://stuartmumford.co.uk/talks/pia)
-* [NAM 2015](http://stuartmumford.co.uk/talks/nam2015)
+  Keynote](http://stuartmumford.uk/talks/pia)
+* [NAM 2015](http://stuartmumford.uk/talks/nam2015)
 
 <a style="margin-bottom: 10px;" id='simulations'></a>
 ## Simulations of the Solar Atmosphere

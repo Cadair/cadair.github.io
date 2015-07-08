@@ -10,10 +10,10 @@ BLOG_AUTHOR = "Stuart Mumford"
 BLOG_TITLE = "Stuart Mumford"
 # This is the main URL for your site. It will be used
 # in a prominent link
-SITE_URL = "http://www.stuartmumford.co.uk/"
+SITE_URL = "http://www.stuartmumford.uk/"
 # This is the URL where nikola's output will be deployed.
 # If not set, defaults to SITE_URL
-BASE_URL = "http://www.stuartmumford.co.uk/"
+BASE_URL = "http://www.stuartmumford.uk/"
 BLOG_EMAIL = "site@cadair.com"
 BLOG_DESCRIPTION = "Homepage for Stuart Mumford."
 
