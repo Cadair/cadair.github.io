@@ -22,6 +22,6 @@ hotter than expected.
 I am also heavily involved in the [SunPy](http://sunpy.org) project,
 having previously been lead developer. SunPy aims to provide a free and open source
 package for the analysis of solar data using the scientific Python ecosystem.
-To see more about SunPy visit it's webpage [www.sunpy.org](http://www.sunpy.org),
+To see more about SunPy visit its webpage [www.sunpy.org](http://www.sunpy.org),
 and to see more of my contributions to open source software see
 my [GitHub](https://github.com/Cadair) profile.

@@ -87,7 +87,7 @@ NAVIGATION_LINKS = {
           ('/research.html#talks', 'Talks'),
           ('/research.html#simulations','Simulations'),
           ('/asteroseismology.html', 'Asteroseismology')), 'Research'),
-        ('/coding.html', 'Programming'),
+        ('/opensci.html', 'Open Science'),
         ((('/blog/', 'Blog'),
           ('/archive.html', 'Archives'),
           ('/categories/index.html', 'Tags')), "Blog"),
@@ -367,7 +367,7 @@ CODE_COLOR_SCHEME = 'vim'
 # READ_MORE_LINK = '<p class="more"><a href="{link}">{read_more}…</a></p>'
 
 # A HTML fragment describing the license, for the sidebar.
-LICENSE = ""
+LICENSE = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>'
 # I recommend using the Creative Commons' wizard:
 # http://creativecommons.org/choose/
 # LICENSE = """
@@ -378,7 +378,7 @@ LICENSE = ""
 
 # A small copyright notice for the page footer (in HTML).
 # Default is ''
-CONTENT_FOOTER = 'Contents &copy; {date}         <a href="mailto:{email}">{author}</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         {license}'
+CONTENT_FOOTER = 'Contents &copy; {date}  <a href="mailto:{email}">{author}</a> {license} - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>'
 CONTENT_FOOTER = CONTENT_FOOTER.format(email=BLOG_EMAIL,
                                        author=BLOG_AUTHOR,
                                        date=time.gmtime().tm_year,
