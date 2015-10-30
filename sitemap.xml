@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+ <url>
+  <loc>http://www.stuartmumford.uk/2015/index.html</loc>
+  <lastmod>2015-10-30T11:41:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://www.stuartmumford.uk/archive.html</loc>
+  <lastmod>2015-10-30T11:41:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://www.stuartmumford.uk/asteroseismology.html</loc>
+  <lastmod>2015-10-30T11:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://www.stuartmumford.uk/blog/index.html</loc>
+  <lastmod>2015-10-30T11:41:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://www.stuartmumford.uk/blog/welcome.html</loc>
+  <lastmod>2015-10-30T11:41:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://www.stuartmumford.uk/categories/index.html</loc>
+  <lastmod>2015-10-30T11:41:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://www.stuartmumford.uk/index.html</loc>
+  <lastmod>2015-10-30T11:41:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://www.stuartmumford.uk/opensci.html</loc>
+  <lastmod>2015-10-30T11:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://www.stuartmumford.uk/research.html</loc>
+  <lastmod>2015-10-30T11:41:00Z</lastmod>
+ </url>
+</urlset>
