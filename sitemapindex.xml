@@ -6,11 +6,11 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
-  <loc>https://cadair.github.io/rss.xml</loc>
-  <lastmod>2015-10-30T12:01:00Z</lastmod>
+  <loc>http://stuartmumford.uk/rss.xml</loc>
+  <lastmod>2015-10-30T12:12:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://cadair.github.io/sitemap.xml</loc>
-  <lastmod>2015-10-30T12:10:00Z</lastmod>
+  <loc>http://stuartmumford.uk/sitemap.xml</loc>
+  <lastmod>2015-10-30T12:12:00Z</lastmod>
  </sitemap>
 </sitemapindex>

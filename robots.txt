@@ -1,4 +1,4 @@
-Sitemap: https://cadair.github.io/sitemapindex.xml
+Sitemap: http://stuartmumford.uk/sitemapindex.xml
 
 User-Agent: *
-Host: cadair.github.io
+Host: stuartmumford.uk
