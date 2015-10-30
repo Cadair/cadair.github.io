@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><title>Stuart Mumford</title><link>http://www.stuartmumford.uk/</link><description>Homepage for Stuart Mumford.</description><atom:link href="http://www.stuartmumford.uk/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Fri, 30 Oct 2015 11:41:59 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Welcome!</title><link>http://www.stuartmumford.uk/blog/welcome.html</link><dc:creator>Stuart Mumford</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Stuart Mumford</title><link>https://cadair.github.io/</link><description>Homepage for Stuart Mumford.</description><atom:link rel="self" type="application/rss+xml" href="https://cadair.github.io/rss.xml"></atom:link><language>en</language><lastBuildDate>Fri, 30 Oct 2015 11:57:21 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Welcome!</title><link>https://cadair.github.io/blog/welcome.html</link><dc:creator>Stuart Mumford</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
     &lt;div class="container" id="notebook-container"&gt;
 
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
@@ -7,7 +7,7 @@
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Welcome!"&gt;Welcome!&lt;a class="anchor-link" href="http://www.stuartmumford.uk/blog/welcome.html#Welcome!"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This is my horrifically under used blog. Everything posted here will probably be interesting to me.&lt;/p&gt;
+&lt;h2 id="Welcome!"&gt;Welcome!&lt;a class="anchor-link" href="https://cadair.github.io/blog/welcome.html#Welcome!"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This is my horrifically under used blog. Everything posted here will probably be interesting to me.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -17,7 +17,7 @@
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="This-Blog"&gt;This Blog&lt;a class="anchor-link" href="http://www.stuartmumford.uk/blog/welcome.html#This-Blog"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;This website and blog is built using the &lt;a href="http://www.stuartmumford.uk/blog/www.getnikola.com"&gt;Nikola&lt;/a&gt; project. It means that I can write the pages in markdown and compile it into a static site, which I then FTP to my web host. This blog I am writing using Jupyter (IPython) Notebooks, which when combined with a seperate blog meta data file compile into html and appear here for you to read!&lt;/p&gt;
+&lt;h3 id="This-Blog"&gt;This Blog&lt;a class="anchor-link" href="https://cadair.github.io/blog/welcome.html#This-Blog"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;This website and blog is built using the &lt;a href="https://cadair.github.io/blog/www.getnikola.com"&gt;Nikola&lt;/a&gt; project. It means that I can write the pages in markdown and compile it into a static site, which I then FTP to my web host. This blog I am writing using Jupyter (IPython) Notebooks, which when combined with a seperate blog meta data file compile into html and appear here for you to read!&lt;/p&gt;
 &lt;p&gt;This post for instance has the following meta data file:&lt;/p&gt;
 
 &lt;/div&gt;
@@ -68,4 +68,4 @@
 &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-</description><guid>http://www.stuartmumford.uk/blog/welcome.html</guid><pubDate>Wed, 01 Apr 2015 20:19:09 GMT</pubDate></item></channel></rss>
+</description><guid>https://cadair.github.io/blog/welcome.html</guid><pubDate>Wed, 01 Apr 2015 20:19:09 GMT</pubDate></item></channel></rss>
