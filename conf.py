@@ -10,10 +10,10 @@ BLOG_AUTHOR = "Stuart Mumford"
 BLOG_TITLE = "Stuart Mumford"
 # This is the main URL for your site. It will be used
 # in a prominent link
-SITE_URL = "http://www.stuartmumford.uk/"
+SITE_URL = "http://stuartmumford.uk/"
 # This is the URL where nikola's output will be deployed.
 # If not set, defaults to SITE_URL
-BASE_URL = "http://www.stuartmumford.uk/"
+#BASE_URL = "http://www.stuartmumford.uk/"
 BLOG_EMAIL = "site@cadair.com"
 BLOG_DESCRIPTION = "Homepage for Stuart Mumford."
 
@@ -239,8 +239,13 @@ INDEX_PATH = "blog"
 # And then do a backup, or run `nikola ping` from the `ping`
 # plugin (`nikola install_plugin ping`).
 # To do manual deployment, set it to []
-DEPLOY_COMMANDS = {'default': ['cd output && ncftpput -u stumum01 -DD -R -v ftp.servage.net / ./']}
+#DEPLOY_COMMANDS = {'default': ['cd output && ncftpput -u stumum01 -DD -R -v ftp.servage.net / ./']}
 #DEPLOY_COMMANDS = ['cd output && ncftpput -u stumum01 -DD -R -v ftp.servage.net / ./']
+
+
+GITHUB_DEPLOY_BRANCH='master'
+GITHUB_SOURCE_BRANCH='develop'
+
 
 # Where the output site should be located
 # If you don't use an absolute path, it will be considered as relative
