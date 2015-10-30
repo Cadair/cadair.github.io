@@ -139,11 +139,11 @@ MathJax.Hub.Config({
 <p>In this blog post I will demonstrate my git + LaTeX workflow for acedemic papers. For those of you who might be reading this lucky enough not to comprehend the workflow of submitting a paper to a scientific journal, it goes something like this (YMMV):</p>
 <ol>
 <li>Spend months slaving over a manuscript you think is amazing.</li>
-<li>Get supervisors / co-authors feedback on your wonder paper.</li>
+<li>Get supervisors / co-authors feedback on your paper.</li>
 <li>Make lots and <strong>lots</strong> of corrections.</li>
-<li>Get supervisors / co-authors feedback on your little paper.</li>
+<li>Get supervisors / co-authors feedback on your paper.</li>
 <li>Send your paper to a journal.</li>
-<li>Get a referee report you try very hard to to take personally.</li>
+<li>Get a referee report you try very hard not to to take personally.</li>
 <li>Make lots and <strong>lots</strong> of corrections.</li>
 <li>Resubmit your paper to the journal.</li>
 <li>Get a referee report you find slightly exasperating.</li>
@@ -184,9 +184,9 @@ git init</code></pre>
 <h3 id="The-Draft">The Draft<a class="anchor-link" href="using-git-with-latex-for-papers.html#The-Draft">¶</a>
 </h3>
 <p>Once you have written your fanstic contribution to the sum total of human knowlege, you should have a full history of changes to your manuscript (you did <em>commit early and commit often</em> right?).</p>
-<p>Now comes the time to hand your paper off to your co-authors for comments. What I do at this point is to create a git branch for each person I am showing the paper to:</p>
+<p>Now comes the time to hand your paper off to your co-authors for comments. What I do at this point is to create a git tag for each person I am showing the paper to:</p>
 
-<pre><code>git branch coauthor1</code></pre>
+<pre><code>git tag coauthor1</code></pre>
 <p>Now print it off and wait.</p>
 
 </div>
@@ -215,7 +215,7 @@ git init</code></pre>
 <h3 id="Corrections">Corrections<a class="anchor-link" href="using-git-with-latex-for-papers.html#Corrections">¶</a>
 </h3>
 <p>Next up, you get a bit of crumpled up paper with more red pen than text.</p>
-<p>Let's make a new branch which is a copy of the original coauthor branch so you can make your changes, and keep a record of the last version we gave to coauthor1.</p>
+<p>Let's make a new branch which is based on the coauthor1 tag so you can make your changes, and keep a record of the last version we gave to coauthor1.</p>
 
 <pre><code>git checkout -b coauthor1-changes1 coauthor1</code></pre>
 <p>Make your changes, with no worrying about what you have changed in the month you have been waiting for feedback. Just take the source back to the point where you gave it to them and make the changes.</p>
