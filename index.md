@@ -7,7 +7,7 @@
 .. description:
 .. type: text
 -->
-
+:)
 I am a post-graduate researcher, working towards a PhD, at
 The University of Sheffield. I obtained a first class MPhys degree in Physics
 with Planetary and Space Physics from The University of Wales Aberystwyth,
