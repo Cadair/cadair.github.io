@@ -102,7 +102,178 @@ MathJax.Hub.Config({
       
 
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="the-fibonacci-sequence.html" class="u-url">The Fibonacci Sequence</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="jupyter-notebook-and-conda.html" class="u-url">Jupyter Notebook and Conda</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                Stuart Mumford
+            </span></p>
+            <p class="dateline"><a href="jupyter-notebook-and-conda.html" rel="bookmark"><time class="published dt-published" datetime="2015-11-19T11:20:12Z" title="2015-11-19 11:20">2015-11-19 11:20</time></a></p>
+                <p class="commentline">
+        
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This post is going to be the first in a series of posts about the Jupyter Notebook and the supercomputing facility <a href="http://rcg.group.shef.ac.uk/iceberg/index.html">'iceberg'</a> at Sheffield University.</p>
+<p>This post is about a plugin for the Jupyter Notebook I have written to make it easier to work with Jupyter and the <a href="http://conda.pydata.org/docs/">conda</a> python package manager. Specifically the fantastic <a href="http://conda.pydata.org/docs/using/envs.html">environments</a> feature, which allow you to have multiple different versions of Python and different stacks of packages installed alongside one another.</p>
+<p>When working with conda and the Jupyter Notebook you can create a different envronment and install Jupyter into it and then use the notebook from within that environment. This might look something like this:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>conda create -n numpy python=3 numpy jupyter
+source activate numpy
+jupyter notebook</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This approach works fine, but what happens if you want to switch to running your current notebook in the "numpy-1.9" envronment instead to test it with a previous version of NumPy? You would have to do this:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Stop the notebook sever then:</p>
+
+<pre><code>source deactivate
+source activate numpy-1.9
+jupyter notebook</code></pre>
+<p>Then reload the notebook you had open before.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What my Notebook plugin does is enables you to switch environments from within a running notebook server, but using the "kernel" feature of the Notebook.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../images/jupyterhub-kernels.png" alt="Jupyter Kernel Switching"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Each entry in the kernel list above that starts with 'Environment' is a conda environment that has Jupyter installed within it, and you can start a notebook using any of those envronments.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The plugin that enables this is <a href="https://github.com/Cadair/jupyter_environment_kernels">jupyter_envrionment_kernels</a> (catchy name I know). It looks in the directories you specify for installed environments which have Jupyter installed (the <code>ipython</code> executable is in the <code>bin/</code> directory) and lists them as kernels for Jupyter to find. This makes it easy to run one notebook instance and access kernels with access to different versions of Python or different modules seamlessly.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To solve our earlier problem of "live" switching the kernel we can use the Kernel &gt; Change Kernel menu:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../images/jupyterhub-running-kernel.png" alt="Jupyter Notebook Switch Running Kernel"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Installing-jupyter_environment_kernels">Installing jupyter_environment_kernels<a class="anchor-link" href="jupyter-notebook-and-conda.html#Installing-jupyter_environment_kernels">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Installation of the package is easy just run</p>
+
+<pre><code>pip install jupyter_environment_kernels</code></pre>
+<p>from within the environment in which you want to run the notebook server.</p>
+<p>Then run:</p>
+
+<pre><code>jupyter notebook --generate-config</code></pre>
+<p>to generate a Jupyter notebook config file (if you already have one then skip this step), finally edit the config file it has generated (by default this is <code>~/.jupyter/jupyter_notebook_config.py</code>) and add the following two lines:</p>
+
+<pre><code>c.NotebookApp.kernel_spec_manager_class = 'environment_kernels.EnvironmentKernelSpecManager'
+c.EnvironmentKernelSpecManager.env_dirs=['~/.conda/envs']</code></pre>
+<p>The first line tells the notebook to use the environment_kernels module to manage the kernels, and the second line lists all the directories in which to look for environments with <code>ipython</code> executables. By default (i.e. if you don't provide the second line) it will look in <code>~/.conda/envs</code> and <code>~/.virtualenvs</code> where the top level directory is assumed to be the name of the environment and then it looks inside the <code>bin</code> directory for <code>ipython</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This module is still very new so if you enounter any issues please raise issues on <a href="https://github.com/Cadair/jupyter_environment_kernels/issues">GitHub</a>.</p>
+
+</div>
+</div>
+</div>
+    </div>
+  </div>
+
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="the-fibonacci-sequence.html" class="u-url">The Fibonacci Sequence</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 Stuart Mumford
@@ -188,7 +359,7 @@ MathJax.Hub.Config({
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>100 loops, best of 3: 7.39 ms per loop
+<pre>100 loops, best of 3: 7.28 ms per loop
 </pre>
 </div>
 </div>
@@ -219,7 +390,7 @@ MathJax.Hub.Config({
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [23]:</div>
+<div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">fib_generator</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -239,7 +410,7 @@ MathJax.Hub.Config({
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [24]:</div>
+<div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="o">%</span><span class="k">timeit</span> list(fib_generator(10000))
@@ -256,7 +427,7 @@ MathJax.Hub.Config({
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>100 loops, best of 3: 5.88 ms per loop
+<pre>100 loops, best of 3: 5.45 ms per loop
 </pre>
 </div>
 </div>
@@ -300,11 +471,11 @@ MathJax.Hub.Config({
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [106]:</div>
+<div class="prompt input_prompt">In [46]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">fib_numpy</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">fib</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">fib</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
     <span class="n">fib</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
         <span class="n">fib</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">fib</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">fib</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
@@ -318,10 +489,10 @@ MathJax.Hub.Config({
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [107]:</div>
+<div class="prompt input_prompt">In [47]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="o">%</span><span class="k">timeit</span> fib_numpy(10000)
+<div class=" highlight hl-ipython3"><pre><span class="o">%</span><span class="k">timeit</span> fib_numpy(1000)
 </pre></div>
 
 </div>
@@ -335,7 +506,7 @@ MathJax.Hub.Config({
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>100 loops, best of 3: 5.86 ms per loop
+<pre>1000 loops, best of 3: 1.33 ms per loop
 </pre>
 </div>
 </div>
@@ -343,7 +514,7 @@ MathJax.Hub.Config({
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>/home/cs1sjm/.conda/envs/numba/lib/python3.4/site-packages/ipykernel/__main__.py:5: RuntimeWarning: overflow encountered in double_scalars
+<pre>/opt/miniconda/envs/numba/lib/python3.5/site-packages/IPython/kernel/__main__.py:5: RuntimeWarning: overflow encountered in long_scalars
 </pre>
 </div>
 </div>
@@ -374,7 +545,7 @@ MathJax.Hub.Config({
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [8]:</div>
+<div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="kn">from</span> <span class="nn">numba</span> <span class="k">import</span> <span class="n">jit</span>
@@ -387,17 +558,18 @@ MathJax.Hub.Config({
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [88]:</div>
+<div class="prompt input_prompt">In [32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="nd">@jit</span>
 <span class="k">def</span> <span class="nf">loop</span><span class="p">(</span><span class="n">fib</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">fib</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">fib</span><span class="p">)):</span>
         <span class="n">fib</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">fib</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">fib</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">fib</span>
     
 <span class="k">def</span> <span class="nf">fib_numba</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">fib</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">fib</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
+    <span class="n">fib</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">fib</span> <span class="o">=</span> <span class="n">loop</span><span class="p">(</span><span class="n">fib</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">fib</span>
 </pre></div>
@@ -409,7 +581,39 @@ MathJax.Hub.Config({
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [89]:</div>
+<div class="prompt input_prompt">In [35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">fib_numba</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[35]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([                   0,                    1,                    1,
+       ...,  8449541255618067177, -5660816691627274375,
+        2788724563990792802])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="o">%</span><span class="k">timeit</span> fib_numba(10000)
@@ -426,8 +630,8 @@ MathJax.Hub.Config({
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The slowest run took 2075.80 times longer than the fastest. This could mean that an intermediate result is being cached 
-10000 loops, best of 3: 45 µs per loop
+<pre>The slowest run took 8.10 times longer than the fastest. This could mean that an intermediate result is being cached 
+10000 loops, best of 3: 37.3 µs per loop
 </pre>
 </div>
 </div>
@@ -458,7 +662,7 @@ MathJax.Hub.Config({
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [14]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="o">%</span><span class="k">load_ext</span> Cython
@@ -471,7 +675,7 @@ MathJax.Hub.Config({
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [108]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="o">%%</span><span class="n">cython</span>
@@ -496,36 +700,13 @@ MathJax.Hub.Config({
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [109]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="o">%</span><span class="k">timeit</span> fib_cython(10000)
 </pre></div>
 
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>100 loops, best of 3: 2.28 ms per loop
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/home/cs1sjm/.conda/envs/numba/lib/python3.4/site-packages/ipykernel/__main__.py:257: RuntimeWarning: overflow encountered in double_scalars
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 

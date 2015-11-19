@@ -29,6 +29,7 @@ MathJax.Hub.Config({
 <link rel="stylesheet" media="screen" href="http://openfontlibrary.org/face/railway-sans" type="text/css">
 <meta name="author" content="Stuart Mumford">
 <link rel="prev" href="welcome.html" title="Welcome!" type="text/html">
+<link rel="next" href="jupyter-notebook-and-conda.html" title="Jupyter Notebook and Conda" type="text/html">
 <meta property="og:site_name" content="Stuart Mumford">
 <meta property="og:title" content="The Fibonacci Sequence">
 <meta property="og:url" content="http://stuartmumford.uk/blog/the-fibonacci-sequence.html">
@@ -199,7 +200,7 @@ The Fibbonacci sequence is defined such that the next number in the sequence is 
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>100 loops, best of 3: 7.39 ms per loop
+<pre>100 loops, best of 3: 7.28 ms per loop
 </pre>
 </div>
 </div>
@@ -230,7 +231,7 @@ The Fibbonacci sequence is defined such that the next number in the sequence is 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [23]:</div>
+<div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">fib_generator</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -250,7 +251,7 @@ The Fibbonacci sequence is defined such that the next number in the sequence is 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [24]:</div>
+<div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="o">%</span><span class="k">timeit</span> list(fib_generator(10000))
@@ -267,7 +268,7 @@ The Fibbonacci sequence is defined such that the next number in the sequence is 
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>100 loops, best of 3: 5.88 ms per loop
+<pre>100 loops, best of 3: 5.45 ms per loop
 </pre>
 </div>
 </div>
@@ -311,11 +312,11 @@ The Fibbonacci sequence is defined such that the next number in the sequence is 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [106]:</div>
+<div class="prompt input_prompt">In [46]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">fib_numpy</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">fib</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">fib</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
     <span class="n">fib</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
         <span class="n">fib</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">fib</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">fib</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
@@ -329,10 +330,10 @@ The Fibbonacci sequence is defined such that the next number in the sequence is 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [107]:</div>
+<div class="prompt input_prompt">In [47]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="o">%</span><span class="k">timeit</span> fib_numpy(10000)
+<div class=" highlight hl-ipython3"><pre><span class="o">%</span><span class="k">timeit</span> fib_numpy(1000)
 </pre></div>
 
 </div>
@@ -346,7 +347,7 @@ The Fibbonacci sequence is defined such that the next number in the sequence is 
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>100 loops, best of 3: 5.86 ms per loop
+<pre>1000 loops, best of 3: 1.33 ms per loop
 </pre>
 </div>
 </div>
@@ -354,7 +355,7 @@ The Fibbonacci sequence is defined such that the next number in the sequence is 
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>/home/cs1sjm/.conda/envs/numba/lib/python3.4/site-packages/ipykernel/__main__.py:5: RuntimeWarning: overflow encountered in double_scalars
+<pre>/opt/miniconda/envs/numba/lib/python3.5/site-packages/IPython/kernel/__main__.py:5: RuntimeWarning: overflow encountered in long_scalars
 </pre>
 </div>
 </div>
@@ -385,7 +386,7 @@ The Fibbonacci sequence is defined such that the next number in the sequence is 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [8]:</div>
+<div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="kn">from</span> <span class="nn">numba</span> <span class="k">import</span> <span class="n">jit</span>
@@ -398,17 +399,18 @@ The Fibbonacci sequence is defined such that the next number in the sequence is 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [88]:</div>
+<div class="prompt input_prompt">In [32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="nd">@jit</span>
 <span class="k">def</span> <span class="nf">loop</span><span class="p">(</span><span class="n">fib</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">fib</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">fib</span><span class="p">)):</span>
         <span class="n">fib</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">fib</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">fib</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">fib</span>
     
 <span class="k">def</span> <span class="nf">fib_numba</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">fib</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">fib</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
+    <span class="n">fib</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">fib</span> <span class="o">=</span> <span class="n">loop</span><span class="p">(</span><span class="n">fib</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">fib</span>
 </pre></div>
@@ -420,7 +422,39 @@ The Fibbonacci sequence is defined such that the next number in the sequence is 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [89]:</div>
+<div class="prompt input_prompt">In [35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">fib_numba</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[35]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([                   0,                    1,                    1,
+       ...,  8449541255618067177, -5660816691627274375,
+        2788724563990792802])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="o">%</span><span class="k">timeit</span> fib_numba(10000)
@@ -437,8 +471,8 @@ The Fibbonacci sequence is defined such that the next number in the sequence is 
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The slowest run took 2075.80 times longer than the fastest. This could mean that an intermediate result is being cached 
-10000 loops, best of 3: 45 µs per loop
+<pre>The slowest run took 8.10 times longer than the fastest. This could mean that an intermediate result is being cached 
+10000 loops, best of 3: 37.3 µs per loop
 </pre>
 </div>
 </div>
@@ -469,7 +503,7 @@ The Fibbonacci sequence is defined such that the next number in the sequence is 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [14]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="o">%</span><span class="k">load_ext</span> Cython
@@ -482,7 +516,7 @@ The Fibbonacci sequence is defined such that the next number in the sequence is 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [108]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="o">%%</span><span class="n">cython</span>
@@ -507,36 +541,13 @@ The Fibbonacci sequence is defined such that the next number in the sequence is 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [109]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="o">%</span><span class="k">timeit</span> fib_cython(10000)
 </pre></div>
 
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>100 loops, best of 3: 2.28 ms per loop
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/home/cs1sjm/.conda/envs/numba/lib/python3.4/site-packages/ipykernel/__main__.py:257: RuntimeWarning: overflow encountered in double_scalars
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -558,6 +569,9 @@ The Fibbonacci sequence is defined such that the next number in the sequence is 
     <aside class="postpromonav"><nav><ul class="pager hidden-print">
 <li class="previous">
                 <a href="welcome.html" rel="prev" title="Welcome!">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="jupyter-notebook-and-conda.html" rel="next" title="Jupyter Notebook and Conda">Next post</a>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
         
