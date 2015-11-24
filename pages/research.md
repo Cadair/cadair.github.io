@@ -30,7 +30,6 @@ and other supporting tools, have been made availible on GitHub under the
 ## Publications
 <a class='anchor' id='publications'></a>
 
-
 <div class="paperblock">
 <a href="http://labs.adsabs.harvard.edu/adsabs/abs/2015arXiv150101871M/"
 target="blank_" class="papertitle">Photospheric Logarithmic Velocity Spirals as
@@ -107,6 +106,43 @@ modes, respectively, with small variations dependent upon flux
 surface radius. 
 </div>
 </div>
+
+
+<div class="paperblock">
+<a href="http://labs.adsabs.harvard.edu/adsabs/abs/2015CS%26D....8a4009S/"
+target="blank_" class="papertitle">SunPy: Python for Solar Physics</a>
+The SunPy Community, Mumford, S. J., Christe, S., Pérez-Suárez, D., Ireland,
+J., Shih, A. Y., Inglis, A. R., Liedtke, S., Hewett, R. J., Mayer, F., Hughitt,
+K., Freij, N., Meszaros, T., Bennett, S. M., Malocha, M., Evans, J., Agrawal,
+A., Leonard, A. J., Robitaille, T. P., Mampaey, B., Iván Campos-Rozo, J., Kirk,
+M. S.<br/>
+<i>Computational Science and Discovery</i> - January 2015 - Volume 8 Issue 1.<br/>
+<a href ="http://iopscience.iop.org/article/10.1088/1749-4699/8/1/014009">Publisher Link (Paywall)</a> <br/>
+<a href="javascript:toggle('sunpy2015_abs', 'sunpy2015_link');" id="sunpy2015_link">[show abstract]</a>
+<div id="sunpy2015_abs" style="display: none;">
+This paper presents SunPy (version 0.5), a community-developed Python package
+for solar physics. Python, a free, cross-platform, general-purpose, high-level
+programming language, has seen widespread adoption among the scientific
+community, resulting in the availability of a large number of software
+packages, from numerical computation (NumPy, SciPy) and machine learning
+(scikit-learn) to visualization and plotting (matplotlib). SunPy is
+a data-analysis environment specializing in providing the software necessary to
+analyse solar and heliospheric data in Python. SunPy is open-source software
+(BSD licence) and has an open and transparent development workflow that anyone
+can contribute to. SunPy provides access to solar data through integration with
+the Virtual Solar Observatory (VSO), the Heliophysics Event Knowledgebase
+(HEK), and the HELiophysics Integrated Observatory (HELIO) webservices. It
+currently supports image data from major solar missions (e.g., SDO, SOHO,
+STEREO, and IRIS), time-series data from missions such as GOES, SDO/EVE, and
+PROBA2/LYRA, and radio spectra from e-Callisto and STEREO/SWAVES. We describe
+SunPyʼs functionality, provide examples of solar data analysis in SunPy, and
+show how Python-based solar data-analysis can leverage the many existing tools
+already available in Python. We discuss the future goals of the project and
+encourage interested users to become involved in the planning and development
+of SunPy.
+</div>
+</div>
+
 
 
 <div class="paperblock">
@@ -218,21 +254,17 @@ ergs).
 This is a list off all the conferences I have attended and links to the material
  I presented, where applicable:
 
-* UKMHD 2012
-* [UKMHD 2013](http://stuartmumford.uk/talks/ukmhd2013-talk.pdf)
-* [HPC @ Sheffield 2013](http://stuartmumford.uk/talks/hpc2013-talk.pdf)
-* [SciPy 2013](https://www.youtube.com/watch?v=bXPPTCkaVu8)
-  [(Proceedings)](http://conference.scipy.org/proceedings/scipy2013/mumford.html)
-* [Harvard-Simthsonian Center for Astrophysics 2013](http://stuartmumford.uk/talks/cfa)
-  Talk given to the Python user group at CfA.
-* [HPC @ Sheffield 2014](http://stuartmumford.uk/talks/hpc2014-poster.pdf)
-* [UKMHD 2014](http://stuartmumford.uk/talks/ukmhd2014)
-* [NAM 2014](http://stuartmumford.uk/talks/nam2014)
-* [EuroSciPy 2014](http://stuartmumford.uk/talks/euroscipy2014) -
-[Video (No Audio)](https://www.youtube.com/watch?v=-Lfz3kBjEyY)
-* [Python in Astronomy - Invited
-  Keynote](http://stuartmumford.uk/talks/pia)
 * [NAM 2015](http://stuartmumford.uk/talks/nam2015)
+* [Python in Astronomy - Invited  Keynote](http://stuartmumford.uk/talks/pia)
+* [EuroSciPy 2014](http://stuartmumford.uk/talks/euroscipy2014) - [Video (No Audio)](https://www.youtube.com/watch?v=-Lfz3kBjEyY)
+* [NAM 2014](http://stuartmumford.uk/talks/nam2014)
+* [UKMHD 2014](http://stuartmumford.uk/talks/ukmhd2014)
+* [HPC @ Sheffield 2014](http://stuartmumford.uk/talks/hpc2014-poster.pdf)
+* [Harvard-Simthsonian Center for Astrophysics 2013](http://stuartmumford.uk/talks/cfa)  Talk given to the Python user group at CfA.
+* [SciPy 2013](https://www.youtube.com/watch?v=bXPPTCkaVu8) [(Proceedings)](http://conference.scipy.org/proceedings/scipy2013/mumford.html)
+* [HPC @ Sheffield 2013](http://stuartmumford.uk/talks/hpc2013-talk.pdf)
+* [UKMHD 2013](http://stuartmumford.uk/talks/ukmhd2013-talk.pdf)
+* UKMHD 2012
 
 <a style="margin-bottom: 10px;" id='simulations'></a>
 ## Simulations of the Solar Atmosphere
