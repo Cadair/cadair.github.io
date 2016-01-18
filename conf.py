@@ -242,9 +242,10 @@ INDEX_PATH = "blog"
 #DEPLOY_COMMANDS = {'default': ['cd output && ncftpput -u stumum01 -DD -R -v ftp.servage.net / ./']}
 #DEPLOY_COMMANDS = ['cd output && ncftpput -u stumum01 -DD -R -v ftp.servage.net / ./']
 
+DEPLOY_COMMANDS = {'default': ['s3cmd put --acl-public --recursive output/* s3://stuartmumford.uk']}
 
-GITHUB_DEPLOY_BRANCH='master'
-GITHUB_SOURCE_BRANCH='develop'
+#GITHUB_DEPLOY_BRANCH='master'
+#GITHUB_SOURCE_BRANCH='develop'
 
 
 # Where the output site should be located
@@ -610,14 +611,14 @@ BODY_END = """
   _paq.push(['trackPageView']);
   _paq.push(['enableLinkTracking']);
   (function() {
-    var u="//mail.cadair.com/analytics/";
+  var u="https://mail.cadair.com/analytics/";
     _paq.push(['setTrackerUrl', u+'piwik.php']);
     _paq.push(['setSiteId', 1]);
     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
     g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
   })();
 </script>
-<noscript><p><img src="//mail.cadair.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+<noscript><p><img src="https://mail.cadair.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
 <!-- End Piwik Code -->
 """
 # The possibility to extract metadata from the filename by using a
