@@ -254,8 +254,10 @@ ergs).
 This is a list off all the conferences I have attended and links to the material
  I presented, where applicable:
 
+* [RAS Discussion Meeting](http://stuartmumford.uk/talks/ras2016) - Modern
+  Data Analysis in Solar Physics
 * [NAM 2015](http://stuartmumford.uk/talks/nam2015)
-* [Python in Astronomy - Invited  Keynote](http://stuartmumford.uk/talks/pia)
+* [Python in Astronomy - Invited  Keynote](http://stuartmumford.uk/talks/pia) - [Video](https://www.youtube.com/watch?v=3HYEr4NdziQ)
 * [EuroSciPy 2014](http://stuartmumford.uk/talks/euroscipy2014) - [Video (No Audio)](https://www.youtube.com/watch?v=-Lfz3kBjEyY)
 * [NAM 2014](http://stuartmumford.uk/talks/nam2014)
 * [UKMHD 2014](http://stuartmumford.uk/talks/ukmhd2014)
