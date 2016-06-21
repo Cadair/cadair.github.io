@@ -133,8 +133,8 @@ NAVIGATION_LINKS = {
 #
 
 POSTS = (
-    ("posts/*.md", "blog", "post.tmpl"),
-    ("posts/*.ipynb", "blog", "post.tmpl")
+    ("posts/*.ipynb", "blog", "post.tmpl"),
+    ("posts/*.md", "blog", "post.tmpl")
     )
 PAGES = (
     ("pages/index.md", "", "homepage.tmpl"),
@@ -172,7 +172,7 @@ COMPILERS = {
 
 # Create by default posts in one file format?
 # Set to False for two-file posts, with separate metadata.
-# ONE_FILE_POSTS = True
+ONE_FILE_POSTS = False
 
 # If this is set to True, then posts that are not translated to a language
 # LANG will not be visible at all in the pages in that language.
