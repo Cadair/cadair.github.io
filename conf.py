@@ -131,6 +131,7 @@ NAVIGATION_LINKS = {
 # to feeds and are considered part of a blog, while PAGES are
 # just independent HTML pages.
 #
+IPYNB_CONFIG = {'Exporter':{'template_file': 'kill_hidden'}}
 
 POSTS = (
     ("posts/*.ipynb", "blog", "post.tmpl"),
