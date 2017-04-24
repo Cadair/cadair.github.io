@@ -1,0 +1,4 @@
+Sitemap: http://stuartmumford.uk/sitemapindex.xml
+
+User-Agent: *
+Host: stuartmumford.uk

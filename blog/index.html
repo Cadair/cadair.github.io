@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Homepage for Stuart Mumford.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stuart Mumford</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link href="../assets/css/all.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+<link rel="canonical" href="http://stuartmumford.uk/blog/index.html">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+    },
+    displayAlign: 'left', // Change this to 'center' to center equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><!--[if lt IE 9]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]--><link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="assets/css/typeplate.css">
+<link rel="stylesheet" media="screen" href="http://openfontlibrary.org/face/railway-sans" type="text/css">
+</head>
+<body>
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="container">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="http://stuartmumford.uk/">Stuart Mumford</a>
+    </div>
+    <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Research <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="../research.html">Research</a>
+                    </li>
+<li>
+<a href="../research.html#publications">Publications</a>
+                    </li>
+<li>
+<a href="../research.html#talks">Talks</a>
+                    </li>
+<li>
+<a href="../research.html#simulations">Simulations</a>
+                    </li>
+<li>
+<a href="../asteroseismology.html">Asteroseismology</a>
+            </li>
+</ul>
+</li>
+<li>
+<a href="../opensci.html">Open Science</a>
+            </li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href=".">Blog</a>
+                    </li>
+<li>
+<a href="../archive.html">Archives</a>
+                    </li>
+<li>
+<a href="../categories/index.html">Tags</a>
+            </li>
+</ul>
+</li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<!--Add Links to social media sites --><a href="https://github.com/Cadair" target="_blank"><img src="../assets/img/github_logo.png" alt="GitHub" height="50px"></a>
+<a href="https://plus.google.com/+StuartMumford/" target="_blank"><img src="../assets/img/google-plus.png" alt="Google Plus" height="50px"></a>
+<a href="https://twitter.com/stuartmumford" target="_blank"><img src="../assets/img/Twitter_logo_white.png" alt="Twitter" height="50px"></a>
+<a href="https://www.linkedin.com/in/stuartmumford" target="_blank"><img src="../assets/img/linkedin_logo.png" alt="LinkedIn" height="50px"></a>
+
+
+            
+            
+        </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+</nav><!-- End of Menubar --><div class="container">
+  <!--Body content-->
+  <div class="row">
+      
+      
+
+    
+<div class="postindex">
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="verifying-pypi-and-conda-packages.html" class="u-url">Verifying PyPI and Conda Packages</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                Stuart Mumford
+            </span></p>
+            <p class="dateline"><a href="verifying-pypi-and-conda-packages.html" rel="bookmark"><time class="published dt-published" datetime="2016-06-21T09:17:32Z" title="2016-06-21 09:17">2016-06-21 09:17</time></a></p>
+                <p class="commentline">
+        
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Before we get started here, I must confess something, I know very little about package verification, cryptography or security. This is really a brain dump of everything I have learned from browsing the internet over the last few months.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="The-Question">The Question<a class="anchor-link" href="verifying-pypi-and-conda-packages.html#The-Question">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The first thing to think about when considering packaging verification is not the technical implementation of anything, it's what are we trying to achieve by using crypto to do anything?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Is-the-package-I-am-installing-the-one-the-package-maintainer-uploaded?">Is the package I am installing the one the package maintainer uploaded?<a class="anchor-link" href="verifying-pypi-and-conda-packages.html#Is-the-package-I-am-installing-the-one-the-package-maintainer-uploaded?">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This I think is the question, I am the maintainer of the <a href="http://sunpy.org">sunpy</a> package, and if you are installing SunPy and you are security conscious you probably want to be able to check that the thing you are installing on your machine (potentially with root access) is indeed the code I uploaded. This presents an inherit trust in <em>me</em> the maintainer that I am not deliberately going to mess with your computer, but this is probably as good as you are going to get.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So taking this a little further, what does trusting <em>me</em> actually mean? When using PGP (we will get on to this later) people often talk about a web of trust, in that you trust Bob who trusts me so then you can trust me. This model has many flaws, mainly that not enough people use PGP to make it work. It also misses the point, what you are actually trusting is the git repo I am building the source tarball from. You are trusting that I trust the source I am releasing in the first place.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="My-GitHub-Account-is-what-you-are-Trusting.">My GitHub Account is what you are Trusting.<a class="anchor-link" href="verifying-pypi-and-conda-packages.html#My-GitHub-Account-is-what-you-are-Trusting.">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This I think is the core point I am making here, what you are trusting is effectively my GitHub account. Someone with my GitHub account could make changes to the SunPy repo and do something malicious that I may not notice when I do a release. (You are also trust all the other people with merge rights, but one thing at a time.)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="My-GitHub-Account-is-Linked-to-my-PGP-key">My GitHub Account is Linked to my PGP key<a class="anchor-link" href="verifying-pypi-and-conda-packages.html#My-GitHub-Account-is-Linked-to-my-PGP-key">¶</a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://keybase.io/cadair"><img src="../images/pgp-keybase.png" alt="My Keybase Profile"></a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So you can know that the person who has control over the PGP key with the fingerprint 60BC5C03E6276769 has access to my GitHub account, and therefore can change the source code you are installing. I also sign my commits with the same PGP key, so you know that they all came from the person with control of that key, and that that person has control of the <a href="https://github.com/Cadair">Cadair</a> account.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="My-Trust-Model">My Trust Model<a class="anchor-link" href="verifying-pypi-and-conda-packages.html#My-Trust-Model">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I think this can be summarised as: <strong>"You trust me to write your software, so you trust me to run it on your computer".</strong>
+Which in terms of PGP equates to: "This key signed these commits and is linked to this GitHub account, I therefore trust a package made with it."</p>
+<p>This is subtly but importantly different from the normal trust model of PGP where you are trying to verify that they key belongs to and is controlled by <em>me</em> the real person Stuart Mumford. In this model knowing that it's the same person who has control of the git repo and GitHub account is sufficient.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Using-the-Trust-Model">Using the Trust Model<a class="anchor-link" href="verifying-pypi-and-conda-packages.html#Using-the-Trust-Model">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This is the second stage. We have determined that we are happy to trust a key that we can associate with a GitHub account and some of the commits in a repo, so how do we use this to verify that the same key is the one that signed the package we are about to install?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="PyPI-(pip-install)">PyPI (pip install)<a class="anchor-link" href="verifying-pypi-and-conda-packages.html#PyPI-(pip-install)">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Currently when I upload the SunPy release to PyPI I can sign it with my PGP key and upload the signature alongside the source. The problem is that you would have to run the following commands:</p>
+<div class="highlight"><pre><span></span>curl https://keybase.io/Cadair/key.asc <span class="p">|</span> gpg --import
+pip download --no-deps sunpy
+wget https://pypi.io/packages/source/s/sunpy/sunpy-0.7.2.tar.gz.asc
+gpg --verify sunpy-0.7.2.tar.gz.asc sunpy-0.7.2.tar.gz
+pip install sunpy-0.7.2.tar.gz
+</pre></div>
+<p>To verify that the package you had downloaded was indeed signed by the correct pgp key. Which is silly. There is a little work going on to make this easier e.g. <a href="https://github.com/pypa/pip/issues/1035">pypa/pip#1035</a>. Various efforts like this seem to be stalling over worries about the trust model and lulling users into a false sense of security.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Conda-Package-Builds">Conda Package Builds<a class="anchor-link" href="verifying-pypi-and-conda-packages.html#Conda-Package-Builds">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Recently I started using the excellent <a href="http://conda-forge.github.io/">conda forge</a> project to start building conda binaries for SunPy. This makes it much easier for people to install and use SunPy, but now you not only have to trust the source file, but you have to trust the binary built package as well.</p>
+<p>What does trusting the binary look like? Do you trust that the build bot has been honest and built the package from source correctly? Should conda-forge have a PGP key with which the build bot signs the packages so you know it was indeed built by the build bot? How can conda forge verify the integrity of the source file, and how does it pass that trust onto the end user?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I don't know the answers to any of these questions, and the trust model gets much more tricky when you start considering a build bot being run on CI services where even more people could interfere with the process. My current opinion is that conda forge could do gpg verification on the source from PyPI and then sign the binaries, so that you know that conda forge trusted the original source and that you have downloaded a binary built on the conda-forge build bots. Is that enough?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Conclusions">Conclusions<a class="anchor-link" href="verifying-pypi-and-conda-packages.html#Conclusions">¶</a>
+</h2>
+<p>TL;DR: Python package signing is hard, but I think possible from the pip perspective, once you quantify the minimum you want from a trust model. Conda binaries are a whole different problem, and I can't see an easy solution.</p>
+<p>Please direct comments to <a href="https://twitter.com/stuartmumford">@stuartmumford</a>.</p>
+
+</div>
+</div>
+</div>
+    </div>
+  </div>
+
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="jupyter-notebook-and-conda.html" class="u-url">Jupyter Notebook and Conda</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                Stuart Mumford
+            </span></p>
+            <p class="dateline"><a href="jupyter-notebook-and-conda.html" rel="bookmark"><time class="published dt-published" datetime="2015-11-19T11:20:12Z" title="2015-11-19 11:20">2015-11-19 11:20</time></a></p>
+                <p class="commentline">
+        
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This post is going to be the first in a series of posts about the Jupyter Notebook and the supercomputing facility <a href="http://rcg.group.shef.ac.uk/iceberg/index.html">'iceberg'</a> at Sheffield University.</p>
+<p>This post is about a plugin for the Jupyter Notebook I have written to make it easier to work with Jupyter and the <a href="http://conda.pydata.org/docs/">conda</a> python package manager. Specifically the fantastic <a href="http://conda.pydata.org/docs/using/envs.html">environments</a> feature, which allow you to have multiple different versions of Python and different stacks of packages installed alongside one another.</p>
+<p>When working with conda and the Jupyter Notebook you can create a different envronment and install Jupyter into it and then use the notebook from within that environment. This might look something like this:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>conda create -n numpy python=3 numpy jupyter
+source activate numpy
+jupyter notebook</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This approach works fine, but what happens if you want to switch to running your current notebook in the "numpy-1.9" envronment instead to test it with a previous version of NumPy? You would have to do this:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Stop the notebook sever then:</p>
+
+<pre><code>source deactivate
+source activate numpy-1.9
+jupyter notebook</code></pre>
+<p>Then reload the notebook you had open before.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What my Notebook plugin does is enables you to switch environments from within a running notebook server, but using the "kernel" feature of the Notebook.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../images/jupyterhub-kernels.png" alt="Jupyter Kernel Switching"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Each entry in the kernel list above that starts with 'Environment' is a conda environment that has Jupyter installed within it, and you can start a notebook using any of those envronments.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The plugin that enables this is <a href="https://github.com/Cadair/jupyter_environment_kernels">jupyter_envrionment_kernels</a> (catchy name I know). It looks in the directories you specify for installed environments which have Jupyter installed (the <code>ipython</code> executable is in the <code>bin/</code> directory) and lists them as kernels for Jupyter to find. This makes it easy to run one notebook instance and access kernels with access to different versions of Python or different modules seamlessly.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To solve our earlier problem of "live" switching the kernel we can use the Kernel &gt; Change Kernel menu:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../images/jupyterhub-running-kernel.png" alt="Jupyter Notebook Switch Running Kernel"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Installing-jupyter_environment_kernels">Installing jupyter_environment_kernels<a class="anchor-link" href="jupyter-notebook-and-conda.html#Installing-jupyter_environment_kernels">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Installation of the package is easy just run</p>
+
+<pre><code>pip install environment_kernels</code></pre>
+<p>from within the environment in which you want to run the notebook server.</p>
+<p>Then run:</p>
+
+<pre><code>jupyter notebook --generate-config</code></pre>
+<p>to generate a Jupyter notebook config file (if you already have one then skip this step), finally edit the config file it has generated (by default this is <code>~/.jupyter/jupyter_notebook_config.py</code>) and add the following two lines:</p>
+
+<pre><code>c.NotebookApp.kernel_spec_manager_class = 'environment_kernels.EnvironmentKernelSpecManager'
+c.EnvironmentKernelSpecManager.conda_env_dirs=['~/.conda/envs']</code></pre>
+<p>The first line tells the notebook to use the environment_kernels module to manage the kernels, and the second line lists all the directories in which to look for environments with <code>ipython</code> executables. By default (i.e. if you don't provide the second line) it will look in <code>~/.conda/envs</code> and <code>~/.virtualenvs</code> where the top level directory is assumed to be the name of the environment and then it looks inside the <code>bin</code> directory for <code>ipython</code>.</p>
+<p>It is also possible to configure the package to use the <code>conda</code> terminal command to find your environments. This will only work if <code>conda</code> is availble from where you ran the notebook command (i.e. you installed the notebook using conda). To use this you just need the:</p>
+
+<pre><code>c.NotebookApp.kernel_spec_manager_class = 'environment_kernels.EnvironmentKernelSpecManager'</code></pre>
+<p>configuration line.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This module is still very new so if you enounter any issues please raise issues on <a href="https://github.com/Cadair/jupyter_environment_kernels/issues">GitHub</a>.</p>
+
+</div>
+</div>
+</div>
+    </div>
+  </div>
+
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="the-fibonacci-sequence.html" class="u-url">The Fibonacci Sequence</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                Stuart Mumford
+            </span></p>
+            <p class="dateline"><a href="the-fibonacci-sequence.html" rel="bookmark"><time class="published dt-published" datetime="2015-10-21T16:04:08Z" title="2015-10-21 16:04">2015-10-21 16:04</time></a></p>
+                <p class="commentline">
+        
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This post compares a few implementations of calculating the first 10,000 numbers in the Fibbonacci sequence.</p>
+<p>The Fibbonacci sequence is defined such that the next number in the sequence is the sum of the previous two:</p>
+<p>i.e.</p>
+<p>1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377</p>
+<p>This is some prep work I did to test numba on the HPC cluster at Sheffield University. I am hoping to get more fancy stuff running using numba on the cluster.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>First off we start with a nice simple and short Python implementation:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">fib</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">fib</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">fib</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fib</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">fib</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">fib</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This implementation creates a list with the first two elements in (some consider the first 0 as part of the sequence) and then loops until the length of the output list is the correct length (+1 because of the 0) adding the next element in as the sum of the previous two.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> fib(10000)
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>100 loops, best of 3: 7.39 ms per loop
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This implementation is respectable, but not exactly fast.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Next up we are going to use a little bit of more modern Python magic to see if we can make a pure Python implementation. This uses an interator which stores it's state when 'yield' is called, upon the next time the iterator is called it will resume from where it left off.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">fib_generator</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">previous</span><span class="p">,</span> <span class="n">current</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="k">yield</span> <span class="n">current</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">previous</span><span class="p">,</span> <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="p">,</span> <span class="n">previous</span> <span class="o">+</span> <span class="n">current</span>
+        <span class="k">yield</span> <span class="n">current</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> list(fib_generator(10000))
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>100 loops, best of 3: 5.88 ms per loop
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This is a litte quicker, which is nice.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Next up we are going to try and use numpy. In this example we define an array the length of the desired sequence and then fill it up in a for loop:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [106]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">fib_numpy</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">fib</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">fib</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="n">fib</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">fib</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">fib</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">fib</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [107]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> fib_numpy(10000)
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>100 loops, best of 3: 5.86 ms per loop
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/home/cs1sjm/.conda/envs/numba/lib/python3.4/site-packages/ipykernel/__main__.py:5: RuntimeWarning: overflow encountered in double_scalars
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This does not give us much, if anything over the generator example.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now we are going to use numba which is a just in time compilation library for Python, which makes things SUPER speedy!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">numba</span> <span class="k">import</span> <span class="n">jit</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [88]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nd">@jit</span>
+<span class="k">def</span> <span class="nf">loop</span><span class="p">(</span><span class="n">fib</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">fib</span><span class="p">)):</span>
+        <span class="n">fib</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">fib</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">fib</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">fib</span>
+    
+<span class="k">def</span> <span class="nf">fib_numba</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">fib</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">fib</span> <span class="o">=</span> <span class="n">loop</span><span class="p">(</span><span class="n">fib</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">fib</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [89]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> fib_numba(10000)
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The slowest run took 2075.80 times longer than the fastest. This could mean that an intermediate result is being cached 
+10000 loops, best of 3: 45 µs per loop
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This makes a MASSIVE difference! In fact probably too much of a difference, something fishy is probably going on here.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Finally we shall use the Cython package for completeness:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> Cython
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [108]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="n">cython</span>
+<span class="k">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="k">cimport</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">fib_cython</span><span class="p">(</span><span class="nb">int</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">cdef</span> <span class="kt">np</span>.<span class="kt">ndarray</span> <span class="nf">fib</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">cdef</span> <span class="kt">int</span> <span class="nf">i</span>
+    
+    <span class="n">fib</span><span class="p">[</span><span class="mf">1</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="n">fib</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">fib</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mf">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">fib</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mf">1</span><span class="p">]</span>
+    
+    <span class="k">return</span> <span class="n">fib</span><span class="p">[</span><span class="mf">1</span><span class="p">:]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [109]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">timeit</span> fib_cython(10000)
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>100 loops, best of 3: 2.28 ms per loop
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/home/cs1sjm/.conda/envs/numba/lib/python3.4/site-packages/ipykernel/__main__.py:257: RuntimeWarning: overflow encountered in double_scalars
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This isn't a bad speed up and there are more optimisations you can do with cython.</p>
+
+</div>
+</div>
+</div>
+    </div>
+  </div>
+
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="welcome.html" class="u-url">Welcome!</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                Stuart Mumford
+            </span></p>
+            <p class="dateline"><a href="welcome.html" rel="bookmark"><time class="published dt-published" datetime="2015-04-01T20:19:09Z" title="2015-04-01 20:19">2015-04-01 20:19</time></a></p>
+                <p class="commentline">
+        
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Welcome!">Welcome!<a class="anchor-link" href="welcome.html#Welcome!">¶</a>
+</h2>
+<p>This is my horrifically under used blog. Everything posted here will probably be interesting to me.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="This-Blog">This Blog<a class="anchor-link" href="welcome.html#This-Blog">¶</a>
+</h3>
+<p>This website and blog is built using the <a href="www.getnikola.com">Nikola</a> project. It means that I can write the pages in markdown and compile it into a static site, which I then FTP to my web host. This blog I am writing using Jupyter (IPython) Notebooks, which when combined with a seperate blog meta data file compile into html and appear here for you to read!</p>
+<p>This post for instance has the following meta data file:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="o">!</span>cat welcome.meta
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.. title: Welcome!
+.. slug: welcome
+.. date: 2015-04-01 20:19:09 UTC
+.. tags: 
+.. link: 
+.. description: 
+.. type: text
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For more information on setting up this Jupyter Notebook blogging platform see <a href="http://damian.oquanta.info/posts/blogging-with-nikola-and-ipython.html">this</a> excellent post by Damian Avila.</p>
+
+</div>
+</div>
+</div>
+    </div>
+  </div>
+
+    </div>
+    </article>
+</div>
+
+
+
+        
+
+
+
+            <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+    },
+    displayAlign: 'left', // Change this to 'center' to center equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script>
+</div>
+
+  <div class="footerbox">
+    Contents © 2017  <a href="mailto:site@cadair.com">Stuart Mumford</a> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"></a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>
+    
+  </div>
+<!--End of body content-->
+</div>
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><script src="../assets/js/all.js"></script><!-- Add Jumbotron scroll js --><script type="text/javascript">//<![CDATA[
+$(window).load(function(){
+  $(window).scroll(function() {
+    var scrolledY = $(window).scrollTop();
+    $('.jumbotron').css('background-position', 'left ' + ((scrolledY)) + 'px');
+  });
+});//]]>
+</script><script>jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+moment.locale("en");
+fancydates(0, "YYYY-MM-DD HH:mm");
+</script><!-- end fancy dates --><!-- Abstract hide/show 
+<script src"/assets/js/div_toggle.js"></script>
+--><script type="text/javascript">
+function toggle(showHideDiv, switchTextDiv) {
+    var ele = document.getElementById(showHideDiv);
+    var text = document.getElementById(switchTextDiv);
+    if(ele.style.display == "none") {
+        ele.style.display = "block";
+        text.innerHTML = "[hide abstract]";
+    }
+    else {
+            ele.style.display = "none";
+            text.innerHTML = "[show abstract]";
+    }
+}
+</script><!-- MathJax --><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script><!-- Piwik --><script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+  var u="https://mail.cadair.com/analytics/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script><noscript><p><img src="https://mail.cadair.com/analytics/piwik.php?idsite=1" style="border:0;" alt=""></p></noscript>
+<!-- End Piwik Code -->
+
+
+</body>
+</html>

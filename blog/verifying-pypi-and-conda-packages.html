@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verifying PyPI and Conda Packages | Stuart Mumford</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link href="../assets/css/all.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+<link rel="canonical" href="http://stuartmumford.uk/blog/verifying-pypi-and-conda-packages.html">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+    },
+    displayAlign: 'left', // Change this to 'center' to center equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script><!--[if lt IE 9]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]--><link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="assets/css/typeplate.css">
+<link rel="stylesheet" media="screen" href="http://openfontlibrary.org/face/railway-sans" type="text/css">
+<meta name="author" content="Stuart Mumford">
+<link rel="prev" href="jupyter-notebook-and-conda.html" title="Jupyter Notebook and Conda" type="text/html">
+<meta property="og:site_name" content="Stuart Mumford">
+<meta property="og:title" content="Verifying PyPI and Conda Packages">
+<meta property="og:url" content="http://stuartmumford.uk/blog/verifying-pypi-and-conda-packages.html">
+<meta property="og:description" content="Before we get started here, I must confess something, I know very little about package verification, cryptography or security. This is really a brain dump of everything I have learned from browsing th">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2016-06-21T09:17:32Z">
+</head>
+<body>
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="container">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="http://stuartmumford.uk/">Stuart Mumford</a>
+    </div>
+    <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Research <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="../research.html">Research</a>
+                    </li>
+<li>
+<a href="../research.html#publications">Publications</a>
+                    </li>
+<li>
+<a href="../research.html#talks">Talks</a>
+                    </li>
+<li>
+<a href="../research.html#simulations">Simulations</a>
+                    </li>
+<li>
+<a href="../asteroseismology.html">Asteroseismology</a>
+            </li>
+</ul>
+</li>
+<li>
+<a href="../opensci.html">Open Science</a>
+            </li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href=".">Blog</a>
+                    </li>
+<li>
+<a href="../archive.html">Archives</a>
+                    </li>
+<li>
+<a href="../categories/index.html">Tags</a>
+            </li>
+</ul>
+</li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<!--Add Links to social media sites --><a href="https://github.com/Cadair" target="_blank"><img src="../assets/img/github_logo.png" alt="GitHub" height="50px"></a>
+<a href="https://plus.google.com/+StuartMumford/" target="_blank"><img src="../assets/img/google-plus.png" alt="Google Plus" height="50px"></a>
+<a href="https://twitter.com/stuartmumford" target="_blank"><img src="../assets/img/Twitter_logo_white.png" alt="Twitter" height="50px"></a>
+<a href="https://www.linkedin.com/in/stuartmumford" target="_blank"><img src="../assets/img/linkedin_logo.png" alt="LinkedIn" height="50px"></a>
+
+
+            
+            
+        </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+</nav><!-- End of Menubar --><div class="container">
+  <!--Body content-->
+  <div class="row">
+      
+      
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Verifying PyPI and Conda Packages</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                    Stuart Mumford
+            </span></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2016-06-21T09:17:32Z" itemprop="datePublished" title="2016-06-21 09:17">2016-06-21 09:17</time></a></p>
+                <p class="commentline">
+        
+
+
+            
+
+        </p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Before we get started here, I must confess something, I know very little about package verification, cryptography or security. This is really a brain dump of everything I have learned from browsing the internet over the last few months.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="The-Question">The Question<a class="anchor-link" href="verifying-pypi-and-conda-packages.html#The-Question">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The first thing to think about when considering packaging verification is not the technical implementation of anything, it's what are we trying to achieve by using crypto to do anything?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Is-the-package-I-am-installing-the-one-the-package-maintainer-uploaded?">Is the package I am installing the one the package maintainer uploaded?<a class="anchor-link" href="verifying-pypi-and-conda-packages.html#Is-the-package-I-am-installing-the-one-the-package-maintainer-uploaded?">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This I think is the question, I am the maintainer of the <a href="http://sunpy.org">sunpy</a> package, and if you are installing SunPy and you are security conscious you probably want to be able to check that the thing you are installing on your machine (potentially with root access) is indeed the code I uploaded. This presents an inherit trust in <em>me</em> the maintainer that I am not deliberately going to mess with your computer, but this is probably as good as you are going to get.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So taking this a little further, what does trusting <em>me</em> actually mean? When using PGP (we will get on to this later) people often talk about a web of trust, in that you trust Bob who trusts me so then you can trust me. This model has many flaws, mainly that not enough people use PGP to make it work. It also misses the point, what you are actually trusting is the git repo I am building the source tarball from. You are trusting that I trust the source I am releasing in the first place.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="My-GitHub-Account-is-what-you-are-Trusting.">My GitHub Account is what you are Trusting.<a class="anchor-link" href="verifying-pypi-and-conda-packages.html#My-GitHub-Account-is-what-you-are-Trusting.">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This I think is the core point I am making here, what you are trusting is effectively my GitHub account. Someone with my GitHub account could make changes to the SunPy repo and do something malicious that I may not notice when I do a release. (You are also trust all the other people with merge rights, but one thing at a time.)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="My-GitHub-Account-is-Linked-to-my-PGP-key">My GitHub Account is Linked to my PGP key<a class="anchor-link" href="verifying-pypi-and-conda-packages.html#My-GitHub-Account-is-Linked-to-my-PGP-key">¶</a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://keybase.io/cadair"><img src="../images/pgp-keybase.png" alt="My Keybase Profile"></a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So you can know that the person who has control over the PGP key with the fingerprint 60BC5C03E6276769 has access to my GitHub account, and therefore can change the source code you are installing. I also sign my commits with the same PGP key, so you know that they all came from the person with control of that key, and that that person has control of the <a href="https://github.com/Cadair">Cadair</a> account.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="My-Trust-Model">My Trust Model<a class="anchor-link" href="verifying-pypi-and-conda-packages.html#My-Trust-Model">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I think this can be summarised as: <strong>"You trust me to write your software, so you trust me to run it on your computer".</strong>
+Which in terms of PGP equates to: "This key signed these commits and is linked to this GitHub account, I therefore trust a package made with it."</p>
+<p>This is subtly but importantly different from the normal trust model of PGP where you are trying to verify that they key belongs to and is controlled by <em>me</em> the real person Stuart Mumford. In this model knowing that it's the same person who has control of the git repo and GitHub account is sufficient.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Using-the-Trust-Model">Using the Trust Model<a class="anchor-link" href="verifying-pypi-and-conda-packages.html#Using-the-Trust-Model">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This is the second stage. We have determined that we are happy to trust a key that we can associate with a GitHub account and some of the commits in a repo, so how do we use this to verify that the same key is the one that signed the package we are about to install?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="PyPI-(pip-install)">PyPI (pip install)<a class="anchor-link" href="verifying-pypi-and-conda-packages.html#PyPI-(pip-install)">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Currently when I upload the SunPy release to PyPI I can sign it with my PGP key and upload the signature alongside the source. The problem is that you would have to run the following commands:</p>
+<div class="highlight"><pre><span></span>curl https://keybase.io/Cadair/key.asc <span class="p">|</span> gpg --import
+pip download --no-deps sunpy
+wget https://pypi.io/packages/source/s/sunpy/sunpy-0.7.2.tar.gz.asc
+gpg --verify sunpy-0.7.2.tar.gz.asc sunpy-0.7.2.tar.gz
+pip install sunpy-0.7.2.tar.gz
+</pre></div>
+<p>To verify that the package you had downloaded was indeed signed by the correct pgp key. Which is silly. There is a little work going on to make this easier e.g. <a href="https://github.com/pypa/pip/issues/1035">pypa/pip#1035</a>. Various efforts like this seem to be stalling over worries about the trust model and lulling users into a false sense of security.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Conda-Package-Builds">Conda Package Builds<a class="anchor-link" href="verifying-pypi-and-conda-packages.html#Conda-Package-Builds">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Recently I started using the excellent <a href="http://conda-forge.github.io/">conda forge</a> project to start building conda binaries for SunPy. This makes it much easier for people to install and use SunPy, but now you not only have to trust the source file, but you have to trust the binary built package as well.</p>
+<p>What does trusting the binary look like? Do you trust that the build bot has been honest and built the package from source correctly? Should conda-forge have a PGP key with which the build bot signs the packages so you know it was indeed built by the build bot? How can conda forge verify the integrity of the source file, and how does it pass that trust onto the end user?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I don't know the answers to any of these questions, and the trust model gets much more tricky when you start considering a build bot being run on CI services where even more people could interfere with the process. My current opinion is that conda forge could do gpg verification on the source from PyPI and then sign the binaries, so that you know that conda forge trusted the original source and that you have downloaded a binary built on the conda-forge build bots. Is that enough?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Conclusions">Conclusions<a class="anchor-link" href="verifying-pypi-and-conda-packages.html#Conclusions">¶</a>
+</h2>
+<p>TL;DR: Python package signing is hard, but I think possible from the pip perspective, once you quantify the minimum you want from a trust model. Conda binaries are a whole different problem, and I can't see an easy solution.</p>
+<p>Please direct comments to <a href="https://twitter.com/stuartmumford">@stuartmumford</a>.</p>
+
+</div>
+</div>
+</div>
+    </div>
+  </div>
+
+    </div>
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="jupyter-notebook-and-conda.html" rel="prev" title="Jupyter Notebook and Conda">Previous post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
+        
+
+
+        </section><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+    },
+    displayAlign: 'left', // Change this to 'center' to center equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script></article>
+</div>
+
+  <div class="footerbox">
+    Contents © 2017  <a href="mailto:site@cadair.com">Stuart Mumford</a> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"></a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>
+    
+  </div>
+<!--End of body content-->
+</div>
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><script src="../assets/js/all.js"></script><!-- Add Jumbotron scroll js --><script type="text/javascript">//<![CDATA[
+$(window).load(function(){
+  $(window).scroll(function() {
+    var scrolledY = $(window).scrollTop();
+    $('.jumbotron').css('background-position', 'left ' + ((scrolledY)) + 'px');
+  });
+});//]]>
+</script><script>jQuery("a.image-reference").colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+moment.locale("en");
+fancydates(0, "YYYY-MM-DD HH:mm");
+</script><!-- end fancy dates --><!-- Abstract hide/show 
+<script src"/assets/js/div_toggle.js"></script>
+--><script type="text/javascript">
+function toggle(showHideDiv, switchTextDiv) {
+    var ele = document.getElementById(showHideDiv);
+    var text = document.getElementById(switchTextDiv);
+    if(ele.style.display == "none") {
+        ele.style.display = "block";
+        text.innerHTML = "[hide abstract]";
+    }
+    else {
+            ele.style.display = "none";
+            text.innerHTML = "[show abstract]";
+    }
+}
+</script><!-- MathJax --><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script><!-- Piwik --><script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+  var u="https://mail.cadair.com/analytics/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script><noscript><p><img src="https://mail.cadair.com/analytics/piwik.php?idsite=1" style="border:0;" alt=""></p></noscript>
+<!-- End Piwik Code -->
+
+
+</body>
+</html>
