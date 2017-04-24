@@ -11,7 +11,7 @@
 I am a reseach computing support officer at the University of Sheffield, who has
 just completed a PhD in numerical solar physics from the University of
 Sheffield. Prior to starting my PhD I obtained a first class MPhys degree in
-Physis with Planetary and Space Physics from The University of Wales
+Physics with Planetary and Space Physics from The University of Wales
 Aberystwyth, during which I spent 5 months studying at UNIS on Svalbard in the
 high arctic.
 
